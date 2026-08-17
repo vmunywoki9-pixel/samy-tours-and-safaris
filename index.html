@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samy Tours & Safaris - Explore Kenya, experience unforgettable safaris and create memories for life.">
+  <meta name="keywords" content="Kenya safaris, Maasai Mara safari, Amboseli safari, Tsavo safari, Kenya coast tours, Samy Tours and Safaris">
+  <title>Samy Tours & Safaris | Explore Kenya</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#173b18;
+      --green2:#285d27;
+      --gold:#c98220;
+      --cream:#f8f2e7;
+      --dark:#111611;
+      --white:#fff;
+      --muted:#68706a;
+      --shadow:0 15px 40px rgba(0,0,0,.12);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Montserrat,Arial,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1160px,92%);margin:auto}
+
+    /* Header */
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
+      box-shadow:0 2px 18px rgba(0,0,0,.08)
+    }
+    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green)}
+    .brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}
+    .brand span{font-size:1.05rem;letter-spacing:.3px}
+    .nav-links{display:flex;align-items:center;gap:25px}
+    .nav-links a{font-size:.88rem;font-weight:700;color:#263126}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-btn{background:var(--green);color:#fff!important;padding:11px 17px;border-radius:30px}
+    .menu{display:none;font-size:28px;cursor:pointer;color:var(--green)}
+
+    /* Hero */
+    .hero{
+      min-height:100vh;
+      padding-top:82px;
+      display:flex;align-items:center;
+      background:
+        linear-gradient(90deg,rgba(8,22,8,.82),rgba(8,22,8,.43),rgba(8,22,8,.15)),
+        url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=85") center/cover;
+      color:#fff;
+    }
+    .hero-content{max-width:760px;padding:90px 0}
+    .eyebrow{display:inline-block;color:#ffd38d;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.82rem;margin-bottom:15px}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(3rem,7vw,5.8rem);line-height:1.02;margin-bottom:22px}
+    .hero p{font-size:1.1rem;max-width:650px;color:#f4f4f4;margin-bottom:32px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:30px;font-weight:800;border:2px solid transparent;transition:.25s}
+    .btn-primary{background:var(--gold);color:#fff}
+    .btn-primary:hover{transform:translateY(-2px);background:#b66e15}
+    .btn-outline{border-color:#fff;color:#fff}
+    .btn-outline:hover{background:#fff;color:var(--green)}
+
+    /* Sections */
+    section{padding:88px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 45px}
+    .section-head .eyebrow{color:var(--gold);margin-bottom:8px}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4vw,3.5rem);color:var(--green);line-height:1.15;margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+
+    /* About */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .about-image{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .about-image img{width:100%;height:480px;object-fit:cover}
+    .about-copy h2{text-align:left}
+    .about-copy p{color:var(--muted);margin:16px 0}
+    .ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+    .tick{font-weight:700;color:var(--green);font-size:.9rem}
+    .tick::before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;margin-right:8px;border-radius:50%;background:#e9f0e5;color:var(--green)}
+
+    /* Packages */
+    .packages{background:var(--cream)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08);transition:.25s}
+    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .card-img{height:220px;overflow:hidden}
+    .card-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
+    .card:hover .card-img img{transform:scale(1.06)}
+    .card-body{padding:23px}
+    .duration{color:var(--gold);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+    .card h3{font-family:"Playfair Display",serif;color:var(--green);font-size:1.55rem;margin:7px 0}
+    .card p{font-size:.9rem;color:var(--muted);margin-bottom:17px}
+    .card-link{font-weight:800;color:var(--green);font-size:.88rem}
+    .price{margin:12px 0 16px;padding:10px 12px;background:#f5ead8;border-left:4px solid var(--gold);border-radius:8px;color:#6d4a20;font-size:.82rem}
+    .price strong{display:block;color:var(--green);font-size:1.08rem;margin-top:2px}
+
+
+    /* Why */
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .why{padding:28px 22px;border:1px solid #e8e8e8;border-radius:var(--radius);background:#fff}
+    .icon{width:48px;height:48px;border-radius:14px;background:#edf3e9;color:var(--green);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
+    .why h3{font-size:1rem;margin-bottom:8px;color:var(--green)}
+    .why p{font-size:.86rem;color:var(--muted)}
+
+    /* Destinations */
+    .dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .dest{height:300px;border-radius:var(--radius);overflow:hidden;position:relative;color:#fff}
+    .dest img{width:100%;height:100%;object-fit:cover}
+    .dest::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.78))}
+    .dest-info{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
+    .dest-info h3{font-family:"Playfair Display",serif;font-size:1.7rem}
+
+    /* CTA */
+    .cta{background:var(--green);color:#fff}
+    .cta-box{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .cta h2{color:#fff;text-align:left;margin:0 0 10px}
+    .cta p{color:#dfe8df;max-width:680px}
+
+    /* Contact */
+    .contact{background:#f7f7f5}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px}
+    .contact-card,.form-card{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+    .contact-card h3,.form-card h3{font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--green);margin-bottom:20px}
+    .contact-item{display:flex;gap:14px;margin:20px 0}
+    .contact-item strong{display:block;color:var(--green)}
+    .contact-item span{font-size:.9rem;color:var(--muted)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.8rem;font-weight:800;color:#374137}
+    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:10px;font:inherit;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--green)}
+    textarea{min-height:120px;resize:vertical}
+    .submit{border:0;cursor:pointer;width:100%;margin-top:5px}
+
+    /* Footer */
+    footer{background:#0d210e;color:#d9e1d9;padding:45px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
+    footer h3{color:#fff;margin-bottom:14px}
+    footer p,footer a{font-size:.88rem;color:#bfcbbf}
+    footer a:hover{color:#fff}
+    .footer-links{display:grid;gap:8px}
+    .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;text-align:center;font-size:.78rem;color:#9eaa9e}
+
+    /* WhatsApp */
+    .whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:27px;z-index:1100;box-shadow:0 8px 25px rgba(0,0,0,.25)}
+    .whatsapp:hover{transform:scale(1.06)}
+
+    @media(max-width:1000px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .why-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:800px){
+      .nav-links{display:none;position:absolute;top:82px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:0 12px 20px rgba(0,0,0,.08)}
+      .nav-links.show{display:flex}
+      .menu{display:block}
+      .about-grid,.contact-grid{grid-template-columns:1fr}
+      .dest-grid{grid-template-columns:1fr 1fr}
+      .cta-box{flex-direction:column;align-items:flex-start}
+      .footer-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      .brand span{font-size:.85rem}
+      .brand img{width:48px;height:48px}
+      .hero-content{padding:60px 0}
+      .hero p{font-size:.96rem}
+      section{padding:65px 0}
+      .cards,.why-grid,.dest-grid{grid-template-columns:1fr}
+      .ticks,.form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .dest{height:280px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <img src="logo.png" alt="Samy Tours & Safaris logo">
+      <span>Samy Tours & Safaris</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#safaris">Safaris</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-btn" href="#contact">Book Now</a>
+    </nav>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Kenya • Safari • Adventure</span>
+        <h1>Explore Kenya.<br>Experience More.</h1>
+        <p>
+          Discover Kenya's spectacular wildlife, landscapes and coastal treasures
+          with Samy Tours & Safaris. Explore, experience and create memories for life.
+        </p>
+        <div class="actions">
+          <a href="#safaris" class="btn btn-primary">Explore Our Safaris</a>
+          <a href="#contact" class="btn btn-outline">Plan My Trip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85" alt="Kenya safari">
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">Welcome to Samy Tours & Safaris</span>
+        <h2>Your Kenyan adventure starts here.</h2>
+        <p>
+          Samy Tours & Safaris is dedicated to creating memorable journeys across Kenya,
+          from world-famous wildlife reserves to the beautiful Kenyan coast.
+        </p>
+        <p>
+          Whether you are looking for a classic wildlife safari, a family holiday,
+          a romantic getaway or a coastal escape, we help you discover Kenya at its best.
+        </p>
+        <div class="ticks">
+          <div class="tick">Personalized itineraries</div>
+          <div class="tick">Professional safari service</div>
+          <div class="tick">Amazing wildlife experiences</div>
+          <div class="tick">Memories for life</div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Start Planning</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages" id="safaris">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Safari Packages</span>
+        <h2>Journeys worth remembering</h2>
+        <p>Choose one of our featured Kenya experiences. All packages start from <strong>USD 4,000 per person</strong>; final pricing depends on dates, accommodation, group size and inclusions.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Maasai Mara safari">
+          </div>
+          <div class="card-body">
+            <span class="duration">4 Days</span>
+            <h3>Maasai Mara Safari</h3>
+            <p>Experience Kenya's iconic savannah, abundant wildlife and unforgettable game drives.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
+            <a class="card-link" href="#contact" onclick="setPackage('4 Days Maasai Mara Safari')">Request This Safari →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80" alt="Amboseli elephants">
+          </div>
+          <div class="card-body">
+            <span class="duration">4 Days</span>
+            <h3>Amboseli Safari</h3>
+            <p>See magnificent elephants against the dramatic backdrop of Mount Kilimanjaro.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
+            <a class="card-link" href="#contact" onclick="setPackage('4 Days Amboseli Safari')">Request This Safari →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80" alt="Tsavo safari">
+          </div>
+          <div class="card-body">
+            <span class="duration">3 Days</span>
+            <h3>Tsavo Safari</h3>
+            <p>Explore the wild landscapes and diverse wildlife of Kenya's famous Tsavo ecosystem.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
+            <a class="card-link" href="#contact" onclick="setPackage('3 Days Tsavo Safari')">Request This Safari →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Kenya coast">
+          </div>
+          <div class="card-body">
+            <span class="duration">6 Days</span>
+            <h3>Kenya Coast Holiday</h3>
+            <p>Relax, discover coastal culture and enjoy the tropical beauty of Kenya's coastline.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
+            <a class="card-link" href="#contact" onclick="setPackage('6 Days Kenya Coast Holiday')">Request This Tour →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Travel With Us</span>
+        <h2>Safari made simple</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why">
+          <div class="icon">🦁</div>
+          <h3>Wildlife Experiences</h3>
+          <p>Discover Kenya's remarkable wildlife in some of Africa's most iconic destinations.</p>
+        </div>
+        <div class="why">
+          <div class="icon">🚙</div>
+          <h3>Comfortable Safaris</h3>
+          <p>Enjoy carefully planned journeys designed around your comfort and interests.</p>
+        </div>
+        <div class="why">
+          <div class="icon">🧭</div>
+          <h3>Local Expertise</h3>
+          <p>Travel with a team focused on making your Kenyan experience smooth and memorable.</p>
+        </div>
+        <div class="why">
+          <div class="icon">⭐</div>
+          <h3>Personal Service</h3>
+          <p>We listen to what you want and help create an itinerary that fits your trip.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="packages" id="destinations">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Discover Kenya</span>
+        <h2>Featured destinations</h2>
+        <p>From open savannahs to tropical beaches, Kenya has an experience for every traveler.</p>
+      </div>
+
+      <div class="dest-grid">
+        <div class="dest">
+          <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1000&q=80" alt="Maasai Mara">
+          <div class="dest-info"><h3>Maasai Mara</h3><p>Wildlife & Big Five</p></div>
+        </div>
+        <div class="dest">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80" alt="Amboseli">
+          <div class="dest-info"><h3>Amboseli</h3><p>Elephants & Kilimanjaro</p></div>
+        </div>
+        <div class="dest">
+          <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1000&q=80" alt="Tsavo">
+          <div class="dest-info"><h3>Tsavo</h3><p>Wild & Vast Landscapes</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-box">
+      <div>
+        <span class="eyebrow">Ready for Kenya?</span>
+        <h2>Let's create your safari.</h2>
+        <p>Tell us where you want to go, how many days you have and what you would love to experience.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Contact Us</span>
+        <h2>Plan your adventure</h2>
+        <p>Send your travel details and Samy Tours & Safaris will be ready to help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Samy Tours & Safaris</h3>
+
+          <div class="contact-item">
+            <div>📞</div>
+            <div>
+              <strong>Call / WhatsApp</strong>
+              <span>0707411732<br>0707435097</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div>✉️</div>
+            <div>
+              <strong>Email</strong>
+              <span>samytoursnsafaris@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div>🌍</div>
+            <div>
+              <strong>Destination</strong>
+              <span>Kenya — Safaris & Coast Holidays</span>
+            </div>
+          </div>
+
+          <a class="btn btn-primary" href="mailto:samytoursnsafaris@gmail.com">Email Us</a>
+        </div>
+
+        <div class="form-card">
+          <h3>Request a Quote</h3>
+          <form id="quoteForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required placeholder="you@example.com">
+              </div>
+              <div class="field">
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" placeholder="+254...">
+              </div>
+              <div class="field">
+                <label for="package">Safari Package</label>
+                <select id="package">
+                  <option>Choose a package</option>
+                  <option>4 Days Maasai Mara Safari</option>
+                  <option>4 Days Amboseli Safari</option>
+                  <option>3 Days Tsavo Safari</option>
+                  <option>6 Days Kenya Coast Holiday</option>
+                  <option>Custom Safari</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="date">Preferred Travel Date</label>
+                <input id="date" type="date">
+              </div>
+              <div class="field">
+                <label for="guests">Number of Travelers</label>
+                <input id="guests" type="number" min="1" placeholder="e.g. 2">
+              </div>
+              <div class="field full">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell us about your trip..."></textarea>
+              </div>
+              <div class="field full">
+                <button class="btn btn-primary submit" type="submit">Send Request on WhatsApp</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h3>Samy Tours & Safaris</h3>
+      <p>Explore. Experience. Memories for Life.</p>
+      <p style="margin-top:10px">Discover the beauty and wildlife of Kenya with a safari designed around you.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#safaris">Safaris</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <div class="footer-links">
+        <a href="tel:+254707411732">0707 411 732</a>
+        <a href="tel:+254707435097">0707 435 097</a>
+        <a href="mailto:samytoursnsafaris@gmail.com">samytoursnsafaris@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="container copyright">
+    © <span id="year"></span> Samy Tours & Safaris. All rights reserved.
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254707411732?text=Hello%20Samy%20Tours%20%26%20Safaris%2C%20I%20would%20like%20to%20plan%20a%20Kenya%20safari." target="_blank" aria-label="Chat on WhatsApp">◉</a>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+
+  function setPackage(value){
+    document.getElementById("package").value = value;
+  }
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("navLinks").classList.remove("show");
+    });
+  });
+
+  document.getElementById("quoteForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const pkg = document.getElementById("package").value;
+    const date = document.getElementById("date").value;
+    const guests = document.getElementById("guests").value;
+    const message = document.getElementById("message").value;
+
+    const text =
+      `Hello Samy Tours & Safaris,%0A%0A` +
+      `I would like to request a safari quote.%0A%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `Phone: ${encodeURIComponent(phone)}%0A` +
+      `Package: ${encodeURIComponent(pkg)}%0A` +
+      `Travel Date: ${encodeURIComponent(date)}%0A` +
+      `Travelers: ${encodeURIComponent(guests)}%0A` +
+      `Message: ${encodeURIComponent(message)}`;
+
+    window.open(`https://wa.me/254707411732?text=${text}`, "_blank");
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
