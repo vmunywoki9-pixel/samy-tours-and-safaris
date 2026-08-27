@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Samy Tours & Safaris - Explore Kenya, experience unforgettable safaris and create memories for life.">
-  <meta name="keywords" content="Kenya safaris, Maasai Mara safari, Amboseli safari, Tsavo safari, Kenya coast tours, Samy Tours and Safaris">
+  <meta name="keywords" content="Kenya safaris, Maasai Mara safari, Amboseli safari, Tsavo safari, Kenya coast tours, Mombasa tours, Mombasa safari operator, Samy Tours and Safaris">
   <title>Samy Tours & Safaris | Explore Kenya</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,14 +117,9 @@
       transform:translateY(-5px);
       box-shadow:var(--shadow);
     }
-    .experience-icon{
-      height:175px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,#173b18,#c98220);
-      color:#fff;
-      font-size:4.5rem;
-    }
+    .experience-photo{height:190px;overflow:hidden;background:#eee}
+    .experience-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
+    .experience-card:hover .experience-photo img{transform:scale(1.06)}
     .experience-body{padding:20px}
     .experience-duration{
       color:var(--gold);
@@ -178,7 +173,7 @@
     }
     @media(max-width:560px){
       .experience-card{flex-basis:82vw}
-      .experience-icon{height:155px}
+      .experience-photo{height:155px}
       .experience-arrows{display:none}
     }
 
@@ -327,7 +322,7 @@
         <span class="eyebrow">Welcome to Samy Tours & Safaris</span>
         <h2>Your Kenyan adventure starts here.</h2>
         <p>
-          Samy Tours & Safaris is dedicated to creating memorable journeys across Kenya,
+          Based in Mombasa, Kenya, Samy Tours & Safaris is dedicated to creating memorable journeys across Kenya,
           from world-famous wildlife reserves to the beautiful Kenyan coast.
         </p>
         <p>
@@ -362,7 +357,7 @@
 
         <div class="experience-carousel" id="experienceCarousel">
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="Tsavo East Day Trip" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Tsavo East Day Trip</h3>
@@ -373,7 +368,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85" alt="Tsavo West Day Trip" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Tsavo West Day Trip</h3>
@@ -384,7 +379,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85" alt="Tsavo East & West Day Trip" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Tsavo East & West Day Trip</h3>
@@ -395,7 +390,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">⛰️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="Taita Hills Day Trip" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Taita Hills Day Trip</h3>
@@ -406,7 +401,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏝️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85" alt="Wasini Island Day Trip" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Wasini Island Day Trip</h3>
@@ -417,7 +412,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐬</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85" alt="Dolphin Watching Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Half Day</span>
             <h3>Dolphin Watching Tour</h3>
@@ -428,7 +423,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌊</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Kisite-Mpunguti Marine Park Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Kisite-Mpunguti Marine Park Tour</h3>
@@ -439,7 +434,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏙️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85" alt="Mombasa City Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Mombasa City Tour</h3>
@@ -450,7 +445,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏘️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=85" alt="Mombasa Old Town Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Half Day</span>
             <h3>Mombasa Old Town Tour</h3>
@@ -461,7 +456,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏰</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85" alt="Fort Jesus Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Half Day</span>
             <h3>Fort Jesus Tour</h3>
@@ -472,7 +467,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85" alt="Haller Park Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Half Day</span>
             <h3>Haller Park Tour</h3>
@@ -483,7 +478,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌴</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85" alt="Mombasa City & Haller Park Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Mombasa City & Haller Park Tour</h3>
@@ -494,7 +489,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">⛵</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=85" alt="Mombasa Dhow Sunset Cruise" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Evening</span>
             <h3>Mombasa Dhow Sunset Cruise</h3>
@@ -505,7 +500,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐠</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85" alt="Mombasa Marine Park Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Mombasa Marine Park Tour</h3>
@@ -516,7 +511,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏖️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85" alt="Diani Beach Experience" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Diani Beach Experience</h3>
@@ -527,7 +522,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌊</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85" alt="Diani Beach & Wasini Island Tour" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">1 Day</span>
             <h3>Diani Beach & Wasini Island Tour</h3>
@@ -538,7 +533,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">☀️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Mombasa Beach Holiday" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Holiday</span>
             <h3>Mombasa Beach Holiday</h3>
@@ -549,7 +544,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌴</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Diani Beach Holiday" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Holiday</span>
             <h3>Diani Beach Holiday</h3>
@@ -560,7 +555,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐢</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85" alt="Watamu Beach Holiday" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Holiday</span>
             <h3>Watamu Beach Holiday</h3>
@@ -571,7 +566,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌅</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=85" alt="Malindi Beach Holiday" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Holiday</span>
             <h3>Malindi Beach Holiday</h3>
@@ -582,7 +577,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🛶</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=900&q=85" alt="Lamu Island Holiday" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Holiday</span>
             <h3>Lamu Island Holiday</h3>
@@ -593,7 +588,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="2 Days 1 Night Tsavo East Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">2 Days / 1 Night</span>
             <h3>2 Days 1 Night Tsavo East Safari</h3>
@@ -604,7 +599,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85" alt="2 Days 1 Night Tsavo West Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">2 Days / 1 Night</span>
             <h3>2 Days 1 Night Tsavo West Safari</h3>
@@ -615,7 +610,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo East Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">3 Days / 2 Nights</span>
             <h3>3 Days 2 Nights Tsavo East Safari</h3>
@@ -626,7 +621,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌋</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo West Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">3 Days / 2 Nights</span>
             <h3>3 Days 2 Nights Tsavo West Safari</h3>
@@ -637,7 +632,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐾</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo East & West Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">3 Days / 2 Nights</span>
             <h3>3 Days 2 Nights Tsavo East & West Safari</h3>
@@ -648,7 +643,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Amboseli Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">3 Days / 2 Nights</span>
             <h3>3 Days 2 Nights Amboseli Safari</h3>
@@ -659,7 +654,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏔️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="4 Days 3 Nights Tsavo & Amboseli Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">4 Days / 3 Nights</span>
             <h3>4 Days 3 Nights Tsavo & Amboseli Safari</h3>
@@ -670,7 +665,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85" alt="5 Days Kenya Wildlife Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">5 Days</span>
             <h3>5 Days Kenya Wildlife Safari</h3>
@@ -681,7 +676,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🌍</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=85" alt="7 Days Kenya Safari" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">7 Days</span>
             <h3>7 Days Kenya Safari</h3>
@@ -692,7 +687,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">❤️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85" alt="Honeymoon Packages" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>Honeymoon Packages</h3>
@@ -703,7 +698,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85" alt="Family Safari Packages" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>Family Safari Packages</h3>
@@ -714,7 +709,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">👥</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85" alt="Group Safari Packages" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>Group Safari Packages</h3>
@@ -725,7 +720,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">💼</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=85" alt="Corporate Tours" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>Corporate Tours</h3>
@@ -736,7 +731,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🎓</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85" alt="School Trips & Educational Tours" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>School Trips & Educational Tours</h3>
@@ -747,7 +742,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🚐</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85" alt="Airport Transfers" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Transfer</span>
             <h3>Airport Transfers</h3>
@@ -758,7 +753,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">✈️</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85" alt="SGR & Flight Booking" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Travel Service</span>
             <h3>SGR & Flight Booking</h3>
@@ -769,7 +764,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🏨</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Hotel Booking" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Travel Service</span>
             <h3>Hotel Booking</h3>
@@ -780,7 +775,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🚗</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Car Hire" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Transport</span>
             <h3>Car Hire</h3>
@@ -791,7 +786,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🚙</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85" alt="Safari Vehicle Hire" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Transport</span>
             <h3>Safari Vehicle Hire</h3>
@@ -802,7 +797,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🧭</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=85" alt="Custom-Made Safaris" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Custom</span>
             <h3>Custom-Made Safaris</h3>
@@ -813,7 +808,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">🤝</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=900&q=85" alt="Airport Meet & Greet" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Transfer</span>
             <h3>Airport Meet & Greet</h3>
@@ -824,7 +819,7 @@
           </div>
         </article>
         <article class="experience-card">
-          <div class="experience-icon" aria-hidden="true">💬</div>
+          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="Travel Consultation" loading="lazy"></div>
           <div class="experience-body">
             <span class="experience-duration">Consultation</span>
             <h3>Travel Consultation</h3>
@@ -996,14 +991,14 @@
           </div>
 
           <div class="contact-item">
-            <div>🌍</div>
+            <div>📍</div>
             <div>
-              <strong>Destination</strong>
-              <span>Kenya — Safaris & Coast Holidays</span>
+              <strong>Location</strong>
+              <span>Mombasa, Kenya</span>
             </div>
           </div>
 
-          <a class="btn btn-primary" href="mailto:samytoursnsafaris@gmail.com">Email Us</a>
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Mombasa%2C%20Kenya" target="_blank" rel="noopener">View Mombasa on Map</a>
         </div>
 
         <div class="form-card">
@@ -1114,6 +1109,7 @@
     </div>
     <div>
       <h3>Contact</h3>
+      <p style="margin-bottom:8px">📍 Mombasa, Kenya</p>
       <div class="footer-links">
         <a href="tel:+254707411732">0707 411 732</a>
         <a href="tel:+254707435097">0707 435 097</a>
