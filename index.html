@@ -85,6 +85,103 @@
     .tick{font-weight:700;color:var(--green);font-size:.9rem}
     .tick::before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;margin-right:8px;border-radius:50%;background:#e9f0e5;color:var(--green)}
 
+
+    /* Tours & Experiences horizontal swipe carousel */
+    .experience-section{background:#fff}
+    .experience-wrap{position:relative}
+    .experience-carousel{
+      display:flex;
+      gap:20px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      padding:8px 4px 22px;
+      -webkit-overflow-scrolling:touch;
+      cursor:grab;
+    }
+    .experience-carousel:active{cursor:grabbing}
+    .experience-carousel::-webkit-scrollbar{display:none}
+    .experience-card{
+      flex:0 0 300px;
+      scroll-snap-align:start;
+      background:#fff;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 8px 28px rgba(0,0,0,.10);
+      border:1px solid #eee;
+      transition:.25s;
+    }
+    .experience-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+    }
+    .experience-icon{
+      height:175px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#173b18,#c98220);
+      color:#fff;
+      font-size:4.5rem;
+    }
+    .experience-body{padding:20px}
+    .experience-duration{
+      color:var(--gold);
+      font-size:.75rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .experience-card h3{
+      font-family:"Playfair Display",serif;
+      color:var(--green);
+      font-size:1.35rem;
+      line-height:1.2;
+      margin:7px 0 9px;
+    }
+    .experience-card p{
+      color:var(--muted);
+      font-size:.86rem;
+      min-height:66px;
+      margin-bottom:15px;
+    }
+    .experience-actions{display:flex;gap:9px}
+    .experience-actions .btn{
+      flex:1;
+      padding:11px 12px;
+      font-size:.78rem;
+    }
+    .experience-arrows{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      margin-bottom:15px;
+    }
+    .experience-arrow{
+      width:42px;
+      height:42px;
+      border:1px solid #ddd;
+      border-radius:50%;
+      background:#fff;
+      color:var(--green);
+      font-size:20px;
+      cursor:pointer;
+      box-shadow:0 5px 15px rgba(0,0,0,.08);
+    }
+    .experience-arrow:hover{background:var(--green);color:#fff}
+    .swipe-hint{
+      text-align:center;
+      color:var(--muted);
+      font-size:.78rem;
+      margin-top:4px;
+    }
+    @media(max-width:560px){
+      .experience-card{flex-basis:82vw}
+      .experience-icon{height:155px}
+      .experience-arrows{display:none}
+    }
+
     /* Packages */
     .packages{background:var(--cream)}
     .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -193,6 +290,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#safaris">Safaris</a>
+      <a href="#experiences">Experiences</a>
       <a href="#destinations">Destinations</a>
       <a href="#contact">Contact</a>
       <a class="nav-btn" href="#contact">Book Now</a>
@@ -243,6 +341,501 @@
           <div class="tick">Memories for life</div>
         </div>
         <a href="#contact" class="btn btn-primary">Start Planning</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="experience-section" id="experiences">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Tours & Experiences</span>
+        <h2>Discover Kenya Your Way</h2>
+        <p>Swipe through our tours, holidays, travel services and safari experiences. Choose an experience and enquire directly with Samy Tours & Safaris.</p>
+      </div>
+
+      <div class="experience-wrap">
+        <div class="experience-arrows">
+          <button class="experience-arrow" type="button" onclick="moveExperiences(-1)" aria-label="Previous experience">←</button>
+          <button class="experience-arrow" type="button" onclick="moveExperiences(1)" aria-label="Next experience">→</button>
+        </div>
+
+        <div class="experience-carousel" id="experienceCarousel">
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Tsavo East Day Trip</h3>
+            <p>Explore Tsavo East's red-soil landscapes and wildlife.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo East Day Trip')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Tsavo West Day Trip</h3>
+            <p>Discover volcanic scenery, wildlife and the famous Mzima Springs.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo West Day Trip')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Tsavo East & West Day Trip</h3>
+            <p>Experience both sides of the legendary Tsavo ecosystem.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo East & West Day Trip')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">⛰️</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Taita Hills Day Trip</h3>
+            <p>Enjoy wildlife and spectacular views around the Taita Hills.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Taita Hills Day Trip')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏝️</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Wasini Island Day Trip</h3>
+            <p>Discover the beautiful waters and coastal charm of Wasini Island.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Wasini Island Day Trip')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐬</div>
+          <div class="experience-body">
+            <span class="experience-duration">Half Day</span>
+            <h3>Dolphin Watching Tour</h3>
+            <p>Enjoy a memorable marine experience searching for dolphins.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Dolphin Watching Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌊</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Kisite-Mpunguti Marine Park Tour</h3>
+            <p>Snorkel, swim and explore the rich marine life of the coast.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Kisite-Mpunguti Marine Park Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏙️</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Mombasa City Tour</h3>
+            <p>Discover Mombasa's culture, history, markets and coastal character.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa City Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏘️</div>
+          <div class="experience-body">
+            <span class="experience-duration">Half Day</span>
+            <h3>Mombasa Old Town Tour</h3>
+            <p>Walk through historic streets filled with Swahili-Arab architecture.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Old Town Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏰</div>
+          <div class="experience-body">
+            <span class="experience-duration">Half Day</span>
+            <h3>Fort Jesus Tour</h3>
+            <p>Explore one of Mombasa's most iconic historical landmarks.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Fort Jesus Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-body">
+            <span class="experience-duration">Half Day</span>
+            <h3>Haller Park Tour</h3>
+            <p>Enjoy nature, wildlife and a relaxing visit to Haller Park.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Haller Park Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌴</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Mombasa City & Haller Park Tour</h3>
+            <p>Combine Mombasa's highlights with a visit to Haller Park.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa City & Haller Park Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">⛵</div>
+          <div class="experience-body">
+            <span class="experience-duration">Evening</span>
+            <h3>Mombasa Dhow Sunset Cruise</h3>
+            <p>Sail along the coast and watch the sun set over the Indian Ocean.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Dhow Sunset Cruise')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐠</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Mombasa Marine Park Tour</h3>
+            <p>Explore coral reefs and marine life in Mombasa's coastal waters.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Marine Park Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏖️</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Diani Beach Experience</h3>
+            <p>Relax and enjoy the white sands and turquoise waters of Diani.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach Experience')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌊</div>
+          <div class="experience-body">
+            <span class="experience-duration">1 Day</span>
+            <h3>Diani Beach & Wasini Island Tour</h3>
+            <p>Combine a Diani beach escape with a beautiful Wasini Island adventure.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach & Wasini Island Tour')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">☀️</div>
+          <div class="experience-body">
+            <span class="experience-duration">Holiday</span>
+            <h3>Mombasa Beach Holiday</h3>
+            <p>Enjoy a relaxing coastal holiday with beaches, culture and activities.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Beach Holiday')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌴</div>
+          <div class="experience-body">
+            <span class="experience-duration">Holiday</span>
+            <h3>Diani Beach Holiday</h3>
+            <p>Experience a tropical beach getaway in beautiful Diani.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach Holiday')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐢</div>
+          <div class="experience-body">
+            <span class="experience-duration">Holiday</span>
+            <h3>Watamu Beach Holiday</h3>
+            <p>Relax on Watamu's beaches and discover its marine attractions.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Watamu Beach Holiday')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌅</div>
+          <div class="experience-body">
+            <span class="experience-duration">Holiday</span>
+            <h3>Malindi Beach Holiday</h3>
+            <p>Enjoy Malindi's beaches, culture and coastal atmosphere.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Malindi Beach Holiday')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🛶</div>
+          <div class="experience-body">
+            <span class="experience-duration">Holiday</span>
+            <h3>Lamu Island Holiday</h3>
+            <p>Experience Lamu's unique Swahili culture, beaches and island life.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Lamu Island Holiday')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-body">
+            <span class="experience-duration">2 Days / 1 Night</span>
+            <h3>2 Days 1 Night Tsavo East Safari</h3>
+            <p>A short wildlife escape through the dramatic Tsavo East landscape.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('2 Days 1 Night Tsavo East Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-body">
+            <span class="experience-duration">2 Days / 1 Night</span>
+            <h3>2 Days 1 Night Tsavo West Safari</h3>
+            <p>Explore Tsavo West with game drives and scenic wilderness.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('2 Days 1 Night Tsavo West Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦒</div>
+          <div class="experience-body">
+            <span class="experience-duration">3 Days / 2 Nights</span>
+            <h3>3 Days 2 Nights Tsavo East Safari</h3>
+            <p>Take more time to explore Tsavo East and its abundant wildlife.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo East Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌋</div>
+          <div class="experience-body">
+            <span class="experience-duration">3 Days / 2 Nights</span>
+            <h3>3 Days 2 Nights Tsavo West Safari</h3>
+            <p>Discover Tsavo West's diverse landscapes and wildlife.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo West Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐾</div>
+          <div class="experience-body">
+            <span class="experience-duration">3 Days / 2 Nights</span>
+            <h3>3 Days 2 Nights Tsavo East & West Safari</h3>
+            <p>Experience both Tsavo East and Tsavo West in one safari.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo East & West Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🐘</div>
+          <div class="experience-body">
+            <span class="experience-duration">3 Days / 2 Nights</span>
+            <h3>3 Days 2 Nights Amboseli Safari</h3>
+            <p>See elephants and spectacular Mount Kilimanjaro views in Amboseli.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Amboseli Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏔️</div>
+          <div class="experience-body">
+            <span class="experience-duration">4 Days / 3 Nights</span>
+            <h3>4 Days 3 Nights Tsavo & Amboseli Safari</h3>
+            <p>Combine two iconic parks for a memorable Kenya wildlife adventure.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('4 Days 3 Nights Tsavo & Amboseli Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🦁</div>
+          <div class="experience-body">
+            <span class="experience-duration">5 Days</span>
+            <h3>5 Days Kenya Wildlife Safari</h3>
+            <p>A multi-day wildlife journey through some of Kenya's finest safari destinations.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('5 Days Kenya Wildlife Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🌍</div>
+          <div class="experience-body">
+            <span class="experience-duration">7 Days</span>
+            <h3>7 Days Kenya Safari</h3>
+            <p>A longer Kenya safari designed for deeper wildlife and landscape experiences.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('7 Days Kenya Safari')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">❤️</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>Honeymoon Packages</h3>
+            <p>Romantic Kenya escapes designed for unforgettable moments together.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Honeymoon Packages')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>Family Safari Packages</h3>
+            <p>Family-friendly safaris planned around comfort, fun and memorable experiences.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Family Safari Packages')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">👥</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>Group Safari Packages</h3>
+            <p>Flexible safari experiences for friends, clubs, organizations and groups.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Group Safari Packages')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">💼</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>Corporate Tours</h3>
+            <p>Professional travel experiences for corporate teams, retreats and events.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Corporate Tours')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🎓</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>School Trips & Educational Tours</h3>
+            <p>Educational travel experiences combining learning, nature and Kenyan attractions.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('School Trips & Educational Tours')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🚐</div>
+          <div class="experience-body">
+            <span class="experience-duration">Transfer</span>
+            <h3>Airport Transfers</h3>
+            <p>Reliable transfers between airports, hotels and your chosen destination.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Airport Transfers')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">✈️</div>
+          <div class="experience-body">
+            <span class="experience-duration">Travel Service</span>
+            <h3>SGR & Flight Booking</h3>
+            <p>Get assistance arranging SGR and domestic or regional flight travel.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('SGR & Flight Booking')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🏨</div>
+          <div class="experience-body">
+            <span class="experience-duration">Travel Service</span>
+            <h3>Hotel Booking</h3>
+            <p>Find and arrange accommodation to suit your itinerary and budget.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Hotel Booking')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🚗</div>
+          <div class="experience-body">
+            <span class="experience-duration">Transport</span>
+            <h3>Car Hire</h3>
+            <p>Choose convenient vehicle hire for your Kenya travel needs.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Car Hire')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🚙</div>
+          <div class="experience-body">
+            <span class="experience-duration">Transport</span>
+            <h3>Safari Vehicle Hire</h3>
+            <p>Hire a suitable safari vehicle for independent or guided wildlife travel.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Safari Vehicle Hire')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🧭</div>
+          <div class="experience-body">
+            <span class="experience-duration">Custom</span>
+            <h3>Custom-Made Safaris</h3>
+            <p>Build a personalized Kenya itinerary around your dates, interests and budget.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Custom-Made Safaris')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">🤝</div>
+          <div class="experience-body">
+            <span class="experience-duration">Transfer</span>
+            <h3>Airport Meet & Greet</h3>
+            <p>Enjoy a smooth arrival with professional airport meet-and-greet assistance.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Airport Meet & Greet')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        <article class="experience-card">
+          <div class="experience-icon" aria-hidden="true">💬</div>
+          <div class="experience-body">
+            <span class="experience-duration">Consultation</span>
+            <h3>Travel Consultation</h3>
+            <p>Get expert guidance to help plan your ideal Kenya travel experience.</p>
+            <div class="experience-actions">
+              <a class="btn btn-primary" href="#contact" onclick="setPackage('Travel Consultation')">Book / Enquire</a>
+            </div>
+          </div>
+        </article>
+        </div>
+        <div class="swipe-hint">← Swipe left or right to explore all tours & experiences →</div>
       </div>
     </div>
   </section>
@@ -432,13 +1025,52 @@
               <div class="field">
                 <label for="package">Safari Package</label>
                 <select id="package">
-                  <option>Choose a package</option>
-                  <option>4 Days Maasai Mara Safari</option>
-                  <option>4 Days Amboseli Safari</option>
-                  <option>3 Days Tsavo Safari</option>
-                  <option>6 Days Kenya Coast Holiday</option>
-                  <option>Custom Safari</option>
-                </select>
+                  
+                   <option>Choose a package</option>
+                   <option>Tsavo East Day Trip</option>
+                   <option>Tsavo West Day Trip</option>
+                   <option>Tsavo East & West Day Trip</option>
+                   <option>Taita Hills Day Trip</option>
+                   <option>Wasini Island Day Trip</option>
+                   <option>Dolphin Watching Tour</option>
+                   <option>Kisite-Mpunguti Marine Park Tour</option>
+                   <option>Mombasa City Tour</option>
+                   <option>Mombasa Old Town Tour</option>
+                   <option>Fort Jesus Tour</option>
+                   <option>Haller Park Tour</option>
+                   <option>Mombasa City & Haller Park Tour</option>
+                   <option>Mombasa Dhow Sunset Cruise</option>
+                   <option>Mombasa Marine Park Tour</option>
+                   <option>Diani Beach Experience</option>
+                   <option>Diani Beach & Wasini Island Tour</option>
+                   <option>Mombasa Beach Holiday</option>
+                   <option>Diani Beach Holiday</option>
+                   <option>Watamu Beach Holiday</option>
+                   <option>Malindi Beach Holiday</option>
+                   <option>Lamu Island Holiday</option>
+                   <option>2 Days 1 Night Tsavo East Safari</option>
+                   <option>2 Days 1 Night Tsavo West Safari</option>
+                   <option>3 Days 2 Nights Tsavo East Safari</option>
+                   <option>3 Days 2 Nights Tsavo West Safari</option>
+                   <option>3 Days 2 Nights Tsavo East & West Safari</option>
+                   <option>3 Days 2 Nights Amboseli Safari</option>
+                   <option>4 Days 3 Nights Tsavo & Amboseli Safari</option>
+                   <option>5 Days Kenya Wildlife Safari</option>
+                   <option>7 Days Kenya Safari</option>
+                   <option>Honeymoon Packages</option>
+                   <option>Family Safari Packages</option>
+                   <option>Group Safari Packages</option>
+                   <option>Corporate Tours</option>
+                   <option>School Trips & Educational Tours</option>
+                   <option>Airport Transfers</option>
+                   <option>SGR & Flight Booking</option>
+                   <option>Hotel Booking</option>
+                   <option>Car Hire</option>
+                   <option>Safari Vehicle Hire</option>
+                   <option>Custom-Made Safaris</option>
+                   <option>Airport Meet & Greet</option>
+                   <option>Travel Consultation</option>
+                 </select>
               </div>
               <div class="field">
                 <label for="date">Preferred Travel Date</label>
@@ -510,6 +1142,15 @@
       document.getElementById("navLinks").classList.remove("show");
     });
   });
+
+
+  function moveExperiences(direction){
+    const carousel = document.getElementById("experienceCarousel");
+    const card = carousel.querySelector(".experience-card");
+    if(!card) return;
+    const amount = card.getBoundingClientRect().width + 20;
+    carousel.scrollBy({left: direction * amount, behavior:"smooth"});
+  }
 
   document.getElementById("quoteForm").addEventListener("submit", function(e){
     e.preventDefault();
