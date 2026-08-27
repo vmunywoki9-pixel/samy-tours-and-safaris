@@ -24,71 +24,288 @@
       --radius:18px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:Montserrat,Arial,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1160px,92%);margin:auto}
-
-    /* Header */
-    header{
-      position:fixed;top:0;left:0;width:100%;z-index:1000;
-      background:rgba(255,255,255,.96);backdrop-filter:blur(10px);
-      box-shadow:0 2px 18px rgba(0,0,0,.08)
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
-    .nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green)}
-    .brand img{width:58px;height:58px;object-fit:contain;border-radius:50%}
-    .brand span{font-size:1.05rem;letter-spacing:.3px}
-    .nav-links{display:flex;align-items:center;gap:25px}
-    .nav-links a{font-size:.88rem;font-weight:700;color:#263126}
-    .nav-links a:hover{color:var(--gold)}
-    .nav-btn{background:var(--green);color:#fff!important;padding:11px 17px;border-radius:30px}
-    .menu{display:none;font-size:28px;cursor:pointer;color:var(--green)}
 
-    /* Hero */
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Montserrat,Arial,sans-serif;
+      color:var(--dark);
+      line-height:1.6;
+      background:#fff;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(1160px,92%);
+      margin:auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 18px rgba(0,0,0,.08);
+    }
+
+    .nav{
+      height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      color:var(--green);
+    }
+
+    .brand img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      border-radius:50%;
+    }
+
+    .brand span{
+      font-size:1.05rem;
+      letter-spacing:.3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    .nav-links a{
+      font-size:.88rem;
+      font-weight:700;
+      color:#263126;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    .nav-btn{
+      background:var(--green);
+      color:#fff!important;
+      padding:11px 17px;
+      border-radius:30px;
+    }
+
+    .menu{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+      color:var(--green);
+    }
+
+    /* ================= HERO ================= */
+
     .hero{
       min-height:100vh;
       padding-top:82px;
-      display:flex;align-items:center;
+      display:flex;
+      align-items:center;
       background:
-        linear-gradient(90deg,rgba(8,22,8,.82),rgba(8,22,8,.43),rgba(8,22,8,.15)),
-        url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=85") center/cover;
+        linear-gradient(
+          90deg,
+          rgba(8,22,8,.82),
+          rgba(8,22,8,.43),
+          rgba(8,22,8,.15)
+        ),
+        url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
       color:#fff;
     }
-    .hero-content{max-width:760px;padding:90px 0}
-    .eyebrow{display:inline-block;color:#ffd38d;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.82rem;margin-bottom:15px}
-    h1{font-family:"Playfair Display",serif;font-size:clamp(3rem,7vw,5.8rem);line-height:1.02;margin-bottom:22px}
-    .hero p{font-size:1.1rem;max-width:650px;color:#f4f4f4;margin-bottom:32px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:30px;font-weight:800;border:2px solid transparent;transition:.25s}
-    .btn-primary{background:var(--gold);color:#fff}
-    .btn-primary:hover{transform:translateY(-2px);background:#b66e15}
-    .btn-outline{border-color:#fff;color:#fff}
-    .btn-outline:hover{background:#fff;color:var(--green)}
 
-    /* Sections */
-    section{padding:88px 0}
-    .section-head{text-align:center;max-width:760px;margin:0 auto 45px}
-    .section-head .eyebrow{color:var(--gold);margin-bottom:8px}
-    h2{font-family:"Playfair Display",serif;font-size:clamp(2.2rem,4vw,3.5rem);color:var(--green);line-height:1.15;margin-bottom:12px}
-    .section-head p{color:var(--muted)}
+    .hero-content{
+      max-width:760px;
+      padding:90px 0;
+    }
 
-    /* About */
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-    .about-image{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    .about-image img{width:100%;height:480px;object-fit:cover}
-    .about-copy h2{text-align:left}
-    .about-copy p{color:var(--muted);margin:16px 0}
-    .ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
-    .tick{font-weight:700;color:var(--green);font-size:.9rem}
-    .tick::before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;margin-right:8px;border-radius:50%;background:#e9f0e5;color:var(--green)}
+    .eyebrow{
+      display:inline-block;
+      color:#ffd38d;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:.82rem;
+      margin-bottom:15px;
+    }
 
+    h1{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(3rem,7vw,5.8rem);
+      line-height:1.02;
+      margin-bottom:22px;
+    }
 
-    /* Tours & Experiences horizontal swipe carousel */
-    .experience-section{background:#fff}
-    .experience-wrap{position:relative}
+    .hero p{
+      font-size:1.1rem;
+      max-width:650px;
+      color:#f4f4f4;
+      margin-bottom:32px;
+    }
+
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:30px;
+      font-weight:800;
+      border:2px solid transparent;
+      transition:.25s;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      background:#b66e15;
+    }
+
+    .btn-outline{
+      border-color:#fff;
+      color:#fff;
+    }
+
+    .btn-outline:hover{
+      background:#fff;
+      color:var(--green);
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section{
+      padding:88px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 45px;
+    }
+
+    .section-head .eyebrow{
+      color:var(--gold);
+      margin-bottom:8px;
+    }
+
+    h2{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(2.2rem,4vw,3.5rem);
+      color:var(--green);
+      line-height:1.15;
+      margin-bottom:12px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .about-image{
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .about-image img{
+      width:100%;
+      height:480px;
+      object-fit:cover;
+    }
+
+    .about-copy h2{
+      text-align:left;
+    }
+
+    .about-copy p{
+      color:var(--muted);
+      margin:16px 0;
+    }
+
+    .ticks{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin:25px 0;
+    }
+
+    .tick{
+      font-weight:700;
+      color:var(--green);
+      font-size:.9rem;
+    }
+
+    .tick::before{
+      content:"✓";
+      display:inline-grid;
+      place-items:center;
+      width:23px;
+      height:23px;
+      margin-right:8px;
+      border-radius:50%;
+      background:#e9f0e5;
+      color:var(--green);
+    }
+
+    /* ================= EXPERIENCES CAROUSEL ================= */
+
+    .experience-section{
+      background:#fff;
+    }
+
+    .experience-wrap{
+      position:relative;
+    }
+
     .experience-carousel{
       display:flex;
       gap:20px;
@@ -101,8 +318,15 @@
       -webkit-overflow-scrolling:touch;
       cursor:grab;
     }
-    .experience-carousel:active{cursor:grabbing}
-    .experience-carousel::-webkit-scrollbar{display:none}
+
+    .experience-carousel:active{
+      cursor:grabbing;
+    }
+
+    .experience-carousel::-webkit-scrollbar{
+      display:none;
+    }
+
     .experience-card{
       flex:0 0 300px;
       scroll-snap-align:start;
@@ -113,14 +337,34 @@
       border:1px solid #eee;
       transition:.25s;
     }
+
     .experience-card:hover{
       transform:translateY(-5px);
       box-shadow:var(--shadow);
     }
-    .experience-photo{height:190px;overflow:hidden;background:#eee}
-    .experience-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
-    .experience-card:hover .experience-photo img{transform:scale(1.06)}
-    .experience-body{padding:20px}
+
+    .experience-photo{
+      height:190px;
+      overflow:hidden;
+      background:#eee;
+    }
+
+    .experience-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:.4s;
+    }
+
+    .experience-card:hover .experience-photo img{
+      transform:scale(1.06);
+    }
+
+    .experience-body{
+      padding:20px;
+    }
+
     .experience-duration{
       color:var(--gold);
       font-size:.75rem;
@@ -128,6 +372,7 @@
       text-transform:uppercase;
       letter-spacing:1px;
     }
+
     .experience-card h3{
       font-family:"Playfair Display",serif;
       color:var(--green);
@@ -135,24 +380,32 @@
       line-height:1.2;
       margin:7px 0 9px;
     }
+
     .experience-card p{
       color:var(--muted);
       font-size:.86rem;
       min-height:66px;
       margin-bottom:15px;
     }
-    .experience-actions{display:flex;gap:9px}
+
+    .experience-actions{
+      display:flex;
+      gap:9px;
+    }
+
     .experience-actions .btn{
       flex:1;
       padding:11px 12px;
       font-size:.78rem;
     }
+
     .experience-arrows{
       display:flex;
       justify-content:flex-end;
       gap:10px;
       margin-bottom:15px;
     }
+
     .experience-arrow{
       width:42px;
       height:42px;
@@ -164,118 +417,495 @@
       cursor:pointer;
       box-shadow:0 5px 15px rgba(0,0,0,.08);
     }
-    .experience-arrow:hover{background:var(--green);color:#fff}
+
+    .experience-arrow:hover{
+      background:var(--green);
+      color:#fff;
+    }
+
     .swipe-hint{
       text-align:center;
       color:var(--muted);
       font-size:.78rem;
       margin-top:4px;
     }
-    @media(max-width:560px){
-      .experience-card{flex-basis:82vw}
-      .experience-photo{height:155px}
-      .experience-arrows{display:none}
+
+    /* ================= PACKAGES ================= */
+
+    .packages{
+      background:var(--cream);
     }
 
-    /* Packages */
-    .packages{background:var(--cream)}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08);transition:.25s}
-    .card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-    .card-img{height:220px;overflow:hidden}
-    .card-img img{width:100%;height:100%;object-fit:cover;transition:.4s}
-    .card:hover .card-img img{transform:scale(1.06)}
-    .card-body{padding:23px}
-    .duration{color:var(--gold);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px}
-    .card h3{font-family:"Playfair Display",serif;color:var(--green);font-size:1.55rem;margin:7px 0}
-    .card p{font-size:.9rem;color:var(--muted);margin-bottom:17px}
-    .card-link{font-weight:800;color:var(--green);font-size:.88rem}
-    .price{margin:12px 0 16px;padding:10px 12px;background:#f5ead8;border-left:4px solid var(--gold);border-radius:8px;color:#6d4a20;font-size:.82rem}
-    .price strong{display:block;color:var(--green);font-size:1.08rem;margin-top:2px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
 
+    .card{
+      background:#fff;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 8px 28px rgba(0,0,0,.08);
+      transition:.25s;
+    }
 
-    /* Why */
-    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .why{padding:28px 22px;border:1px solid #e8e8e8;border-radius:var(--radius);background:#fff}
-    .icon{width:48px;height:48px;border-radius:14px;background:#edf3e9;color:var(--green);display:grid;place-items:center;font-size:22px;margin-bottom:18px}
-    .why h3{font-size:1rem;margin-bottom:8px;color:var(--green)}
-    .why p{font-size:.86rem;color:var(--muted)}
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow);
+    }
 
-    /* Destinations */
-    .dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .dest{height:300px;border-radius:var(--radius);overflow:hidden;position:relative;color:#fff}
-    .dest img{width:100%;height:100%;object-fit:cover}
-    .dest::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.78))}
-    .dest-info{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
-    .dest-info h3{font-family:"Playfair Display",serif;font-size:1.7rem}
+    .card-img{
+      height:220px;
+      overflow:hidden;
+    }
 
-    /* CTA */
-    .cta{background:var(--green);color:#fff}
-    .cta-box{display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .cta h2{color:#fff;text-align:left;margin:0 0 10px}
-    .cta p{color:#dfe8df;max-width:680px}
+    .card-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.4s;
+    }
 
-    /* Contact */
-    .contact{background:#f7f7f5}
-    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px}
-    .contact-card,.form-card{background:#fff;border-radius:var(--radius);padding:30px;box-shadow:0 8px 30px rgba(0,0,0,.06)}
-    .contact-card h3,.form-card h3{font-family:"Playfair Display",serif;font-size:1.7rem;color:var(--green);margin-bottom:20px}
-    .contact-item{display:flex;gap:14px;margin:20px 0}
-    .contact-item strong{display:block;color:var(--green)}
-    .contact-item span{font-size:.9rem;color:var(--muted)}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .field{display:flex;flex-direction:column;gap:7px}
-    .field.full{grid-column:1/-1}
-    label{font-size:.8rem;font-weight:800;color:#374137}
-    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:10px;font:inherit;outline:none}
-    input:focus,select:focus,textarea:focus{border-color:var(--green)}
-    textarea{min-height:120px;resize:vertical}
-    .submit{border:0;cursor:pointer;width:100%;margin-top:5px}
+    .card:hover .card-img img{
+      transform:scale(1.06);
+    }
 
-    /* Footer */
-    footer{background:#0d210e;color:#d9e1d9;padding:45px 0 20px}
-    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
-    footer h3{color:#fff;margin-bottom:14px}
-    footer p,footer a{font-size:.88rem;color:#bfcbbf}
-    footer a:hover{color:#fff}
-    .footer-links{display:grid;gap:8px}
-    .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;text-align:center;font-size:.78rem;color:#9eaa9e}
+    .card-body{
+      padding:23px;
+    }
 
-    /* WhatsApp */
-    .whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:27px;z-index:1100;box-shadow:0 8px 25px rgba(0,0,0,.25)}
-    .whatsapp:hover{transform:scale(1.06)}
+    .duration{
+      color:var(--gold);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .card h3{
+      font-family:"Playfair Display",serif;
+      color:var(--green);
+      font-size:1.55rem;
+      margin:7px 0;
+    }
+
+    .card p{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-bottom:17px;
+    }
+
+    .card-link{
+      font-weight:800;
+      color:var(--green);
+      font-size:.88rem;
+    }
+
+    .price{
+      margin:12px 0 16px;
+      padding:10px 12px;
+      background:#f5ead8;
+      border-left:4px solid var(--gold);
+      border-radius:8px;
+      color:#6d4a20;
+      font-size:.82rem;
+    }
+
+    .price strong{
+      display:block;
+      color:var(--green);
+      font-size:1.08rem;
+      margin-top:2px;
+    }
+
+    /* ================= WHY ================= */
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .why{
+      padding:28px 22px;
+      border:1px solid #e8e8e8;
+      border-radius:var(--radius);
+      background:#fff;
+    }
+
+    .icon{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      background:#edf3e9;
+      color:var(--green);
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      margin-bottom:18px;
+    }
+
+    .why h3{
+      font-size:1rem;
+      margin-bottom:8px;
+      color:var(--green);
+    }
+
+    .why p{
+      font-size:.86rem;
+      color:var(--muted);
+    }
+
+    /* ================= DESTINATIONS ================= */
+
+    .dest-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .dest{
+      height:300px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      position:relative;
+      color:#fff;
+    }
+
+    .dest img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .dest::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.78)
+      );
+    }
+
+    .dest-info{
+      position:absolute;
+      z-index:2;
+      left:22px;
+      right:22px;
+      bottom:20px;
+    }
+
+    .dest-info h3{
+      font-family:"Playfair Display",serif;
+      font-size:1.7rem;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+      background:var(--green);
+      color:#fff;
+    }
+
+    .cta-box{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .cta h2{
+      color:#fff;
+      text-align:left;
+      margin:0 0 10px;
+    }
+
+    .cta p{
+      color:#dfe8df;
+      max-width:680px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact{
+      background:#f7f7f5;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:30px;
+    }
+
+    .contact-card,
+    .form-card{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+
+    .contact-card h3,
+    .form-card h3{
+      font-family:"Playfair Display",serif;
+      font-size:1.7rem;
+      color:var(--green);
+      margin-bottom:20px;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:14px;
+      margin:20px 0;
+    }
+
+    .contact-item strong{
+      display:block;
+      color:var(--green);
+    }
+
+    .contact-item span{
+      font-size:.9rem;
+      color:var(--muted);
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:7px;
+    }
+
+    .field.full{
+      grid-column:1/-1;
+    }
+
+    label{
+      font-size:.8rem;
+      font-weight:800;
+      color:#374137;
+    }
+
+    input,
+    select,
+    textarea{
+      width:100%;
+      padding:13px 14px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      font:inherit;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      border-color:var(--green);
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
+    .submit{
+      border:0;
+      cursor:pointer;
+      width:100%;
+      margin-top:5px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#0d210e;
+      color:#d9e1d9;
+      padding:45px 0 20px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:35px;
+    }
+
+    footer h3{
+      color:#fff;
+      margin-bottom:14px;
+    }
+
+    footer p,
+    footer a{
+      font-size:.88rem;
+      color:#bfcbbf;
+    }
+
+    footer a:hover{
+      color:#fff;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:8px;
+    }
+
+    .copyright{
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:30px;
+      padding-top:18px;
+      text-align:center;
+      font-size:.78rem;
+      color:#9eaa9e;
+    }
+
+    /* ================= WHATSAPP ================= */
+
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:#25d366;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:27px;
+      z-index:1100;
+      box-shadow:0 8px 25px rgba(0,0,0,.25);
+    }
+
+    .whatsapp:hover{
+      transform:scale(1.06);
+    }
+
+    /* ================= RESPONSIVE ================= */
 
     @media(max-width:1000px){
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .why-grid{grid-template-columns:repeat(2,1fr)}
+
+      .cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .why-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
     }
+
     @media(max-width:800px){
-      .nav-links{display:none;position:absolute;top:82px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;align-items:flex-start;box-shadow:0 12px 20px rgba(0,0,0,.08)}
-      .nav-links.show{display:flex}
-      .menu{display:block}
-      .about-grid,.contact-grid{grid-template-columns:1fr}
-      .dest-grid{grid-template-columns:1fr 1fr}
-      .cta-box{flex-direction:column;align-items:flex-start}
-      .footer-grid{grid-template-columns:1fr}
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:82px;
+        left:0;
+        right:0;
+        background:#fff;
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:0 12px 20px rgba(0,0,0,.08);
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .dest-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
     }
+
     @media(max-width:560px){
-      .brand span{font-size:.85rem}
-      .brand img{width:48px;height:48px}
-      .hero-content{padding:60px 0}
-      .hero p{font-size:.96rem}
-      section{padding:65px 0}
-      .cards,.why-grid,.dest-grid{grid-template-columns:1fr}
-      .ticks,.form-grid{grid-template-columns:1fr}
-      .field.full{grid-column:auto}
-      .dest{height:280px}
+
+      .brand span{
+        font-size:.85rem;
+      }
+
+      .brand img{
+        width:48px;
+        height:48px;
+      }
+
+      .hero-content{
+        padding:60px 0;
+      }
+
+      .hero p{
+        font-size:.96rem;
+      }
+
+      section{
+        padding:65px 0;
+      }
+
+      .cards,
+      .why-grid,
+      .dest-grid{
+        grid-template-columns:1fr;
+      }
+
+      .ticks,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .field.full{
+        grid-column:auto;
+      }
+
+      .dest{
+        height:280px;
+      }
+
+      .experience-card{
+        flex-basis:82vw;
+      }
+
+      .experience-photo{
+        height:155px;
+      }
+
+      .experience-arrows{
+        display:none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
   <div class="container nav">
+
     <a href="#home" class="brand">
       <img src="logo.png" alt="Samy Tours & Safaris logo">
       <span>Samy Tours & Safaris</span>
@@ -292,888 +922,2022 @@
     </nav>
 
     <div class="menu" onclick="toggleMenu()">☰</div>
+
   </div>
 </header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <span class="eyebrow">Kenya • Safari • Adventure</span>
-        <h1>Explore Kenya.<br>Experience More.</h1>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+  <div class="container">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        Kenya • Safari • Adventure
+      </span>
+
+      <h1>
+        Explore Kenya.<br>
+        Experience More.
+      </h1>
+
+      <p>
+        Discover Kenya's spectacular wildlife, landscapes and coastal treasures
+        with Samy Tours & Safaris. Explore, experience and create memories for life.
+      </p>
+
+      <div class="actions">
+
+        <a href="#safaris" class="btn btn-primary">
+          Explore Our Safaris
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          Plan My Trip
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <img
+        src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85"
+        alt="Kenya safari">
+    </div>
+
+    <div class="about-copy">
+
+      <span class="eyebrow">
+        Welcome to Samy Tours & Safaris
+      </span>
+
+      <h2>
+        Your Kenyan adventure starts here.
+      </h2>
+
+      <p>
+        Based in Mombasa, Kenya, Samy Tours & Safaris is dedicated to creating
+        memorable journeys across Kenya, from world-famous wildlife reserves
+        to the beautiful Kenyan coast.
+      </p>
+
+      <p>
+        Whether you are looking for a classic wildlife safari, a family holiday,
+        a romantic getaway or a coastal escape, we help you discover Kenya at its best.
+      </p>
+
+      <div class="ticks">
+
+        <div class="tick">
+          Personalized itineraries
+        </div>
+
+        <div class="tick">
+          Professional safari service
+        </div>
+
+        <div class="tick">
+          Amazing wildlife experiences
+        </div>
+
+        <div class="tick">
+          Memories for life
+        </div>
+
+      </div>
+
+      <a href="#contact" class="btn btn-primary">
+        Start Planning
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= TOURS & EXPERIENCES ================= -->
+
+<section class="experience-section" id="experiences">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Tours & Experiences
+      </span>
+
+      <h2>
+        Discover Kenya Your Way
+      </h2>
+
+      <p>
+        Explore our safari experiences, coastal tours and travel services.
+        Choose an experience and enquire directly with Samy Tours & Safaris.
+      </p>
+
+    </div>
+
+    <div class="experience-wrap">
+
+      <div class="experience-arrows">
+
+        <button
+          class="experience-arrow"
+          type="button"
+          onclick="moveExperiences(-1)"
+          aria-label="Previous experience">
+          ←
+        </button>
+
+        <button
+          class="experience-arrow"
+          type="button"
+          onclick="moveExperiences(1)"
+          aria-label="Next experience">
+          →
+        </button>
+
+      </div>
+
+      <div class="experience-carousel" id="experienceCarousel">
+
+        <!-- Tsavo East Day Trip -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85"
+              alt="Tsavo East Day Trip"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              1 Day
+            </span>
+
+            <h3>
+              Tsavo East Day Trip
+            </h3>
+
+            <p>
+              Explore Tsavo East's red-soil landscapes and wildlife.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Tsavo East Day Trip')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Tsavo West Day Trip -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85"
+              alt="Tsavo West Day Trip"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              1 Day
+            </span>
+
+            <h3>
+              Tsavo West Day Trip
+            </h3>
+
+            <p>
+              Discover volcanic scenery, wildlife and the famous Mzima Springs.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Tsavo West Day Trip')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Wasini Island -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85"
+              alt="Wasini Dolphin Tour"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              1 Day
+            </span>
+
+            <h3>
+              Wasini Dolphine Tour
+            </h3>
+
+            <p>
+              Discover the beautiful waters and coastal charm of Wasini Island.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Wasini Dolphine Tour')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Mombasa City Tour -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+              alt="Mombasa City Tour"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              1 Day
+            </span>
+
+            <h3>
+              Mombasa City Tour
+            </h3>
+
+            <p>
+              Discover Mombasa's culture, history, markets and coastal character.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Mombasa City Tour')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Mombasa Dhow Sunset Cruise -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=85"
+              alt="Mombasa Dhow Sunset Cruise"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Evening
+            </span>
+
+            <h3>
+              Mombasa Dhow Sunset Cruise
+            </h3>
+
+            <p>
+              Sail along the coast and watch the sun set over the Indian Ocean.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Mombasa Dhow Sunset Cruise')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Mombasa Marine Park -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85"
+              alt="Mombasa Marine Park Tour"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              1 Day
+            </span>
+
+            <h3>
+              Mombasa Marine Park Tour
+            </h3>
+
+            <p>
+              Explore coral reefs and marine life in Mombasa's coastal waters.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Mombasa Marine Park Tour')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 2 Days Tsavo East -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85"
+              alt="2 Days 1 Night Tsavo East Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              2 Days / 1 Night
+            </span>
+
+            <h3>
+              2 Days 1 Night Tsavo East Safari
+            </h3>
+
+            <p>
+              A short wildlife escape through the dramatic Tsavo East landscape.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('2 Days 1 Night Tsavo East Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 2 Days Tsavo West -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85"
+              alt="2 Days 1 Night Tsavo West Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              2 Days / 1 Night
+            </span>
+
+            <h3>
+              2 Days 1 Night Tsavo West Safari
+            </h3>
+
+            <p>
+              Explore Tsavo West with game drives and scenic wilderness.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('2 Days 1 Night Tsavo West Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 3 Days Tsavo East -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85"
+              alt="3 Days 2 Nights Tsavo East Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              3 Days / 2 Nights
+            </span>
+
+            <h3>
+              3 Days 2 Nights Tsavo East Safari
+            </h3>
+
+            <p>
+              Take more time to explore Tsavo East and its abundant wildlife.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('3 Days 2 Nights Tsavo East Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 3 Days Tsavo West -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85"
+              alt="3 Days 2 Nights Tsavo West Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              3 Days / 2 Nights
+            </span>
+
+            <h3>
+              3 Days 2 Nights Tsavo West Safari
+            </h3>
+
+            <p>
+              Discover Tsavo West's diverse landscapes and wildlife.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('3 Days 2 Nights Tsavo West Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 3 Days Tsavo East & West -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85"
+              alt="3 Days 2 Nights Tsavo East & West Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              3 Days / 2 Nights
+            </span>
+
+            <h3>
+              3 Days 2 Nights Tsavo East & West Safari
+            </h3>
+
+            <p>
+              Experience both Tsavo East and Tsavo West in one safari.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('3 Days 2 Nights Tsavo East & West Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 3 Days Amboseli -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85"
+              alt="3 Days 2 Nights Amboseli Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              3 Days / 2 Nights
+            </span>
+
+            <h3>
+              3 Days 2 Nights Amboseli Safari
+            </h3>
+
+            <p>
+              See elephants and spectacular Mount Kilimanjaro views in Amboseli.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('3 Days 2 Nights Amboseli Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 5 Days Kenya Wildlife -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+              alt="5 Days Kenya Wildlife Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              5 Days
+            </span>
+
+            <h3>
+              5 Days Kenya Wildlife Safari
+            </h3>
+
+            <p>
+              A multi-day wildlife journey through some of Kenya's finest safari destinations.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('5 Days Kenya Wildlife Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 7 Days Kenya Safari -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=85"
+              alt="7 Days Kenya Safari"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              7 Days
+            </span>
+
+            <h3>
+              7 Days Kenya Safari
+            </h3>
+
+            <p>
+              A longer Kenya safari designed for deeper wildlife and landscape experiences.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('7 Days Kenya Safari')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Honeymoon -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85"
+              alt="Honeymoon Packages"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Custom
+            </span>
+
+            <h3>
+              Honeymoon Packages
+            </h3>
+
+            <p>
+              Romantic Kenya escapes designed for unforgettable moments together.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Honeymoon Packages')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Family -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85"
+              alt="Family Safari Packages"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Custom
+            </span>
+
+            <h3>
+              Family Safari Packages
+            </h3>
+
+            <p>
+              Family-friendly safaris planned around comfort, fun and memorable experiences.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Family Safari Packages')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- School Trips -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85"
+              alt="School Trips & Educational Tours"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Custom
+            </span>
+
+            <h3>
+              School Trips & Educational Tours
+            </h3>
+
+            <p>
+              Educational travel experiences combining learning, nature and Kenyan attractions.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('School Trips & Educational Tours')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Airport Transfers -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"
+              alt="Airport Transfers"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Transfer
+            </span>
+
+            <h3>
+              Airport Transfers
+            </h3>
+
+            <p>
+              Reliable transfers between airports, hotels and your chosen destination.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Airport Transfers')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- SGR & Flight Booking -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85"
+              alt="SGR & Flight Booking"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Travel Service
+            </span>
+
+            <h3>
+              SGR & Flight Booking
+            </h3>
+
+            <p>
+              Get assistance arranging SGR and domestic or regional flight travel.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('SGR & Flight Booking')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Hotel Booking -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85"
+              alt="Hotel Booking"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Travel Service
+            </span>
+
+            <h3>
+              Hotel Booking
+            </h3>
+
+            <p>
+              Find and arrange accommodation to suit your itinerary and budget.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Hotel Booking')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Custom-Made Safaris -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=85"
+              alt="Custom-Made Safaris"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Custom
+            </span>
+
+            <h3>
+              Custom-Made Safaris
+            </h3>
+
+            <p>
+              Build a personalized Kenya itinerary around your dates, interests and budget.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Custom-Made Safaris')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- Travel Consultation -->
+        <article class="experience-card">
+
+          <div class="experience-photo">
+            <img
+              src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85"
+              alt="Travel Consultation"
+              loading="lazy">
+          </div>
+
+          <div class="experience-body">
+
+            <span class="experience-duration">
+              Consultation
+            </span>
+
+            <h3>
+              Travel Consultation
+            </h3>
+
+            <p>
+              Get expert guidance to help plan your ideal Kenya travel experience.
+            </p>
+
+            <div class="experience-actions">
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                onclick="setPackage('Travel Consultation')">
+                Book / Enquire
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="swipe-hint">
+        ← Swipe left or right to explore all tours & experiences →
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FEATURED SAFARI PACKAGES ================= -->
+
+<section class="packages" id="safaris">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Our Safari Packages
+      </span>
+
+      <h2>
+        Journeys worth remembering
+      </h2>
+
+      <p>
+        Choose one of our featured Kenya experiences.
+        All packages start from <strong>USD 4,000 per person</strong>;
+        final pricing depends on dates, accommodation, group size and inclusions.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+      <!-- Maasai Mara -->
+
+      <article class="card">
+
+        <div class="card-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80"
+            alt="Maasai Mara safari">
+
+        </div>
+
+        <div class="card-body">
+
+          <span class="duration">
+            4 Days
+          </span>
+
+          <h3>
+            Maasai Mara Safari
+          </h3>
+
+          <p>
+            Experience Kenya's iconic savannah, abundant wildlife and unforgettable game drives.
+          </p>
+
+          <div class="price">
+            From
+            <strong>USD 4,000</strong>
+            per person
+          </div>
+
+          <a
+            class="card-link"
+            href="#contact"
+            onclick="setPackage('4 Days Maasai Mara Safari')">
+            Request This Safari →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- Amboseli -->
+
+      <article class="card">
+
+        <div class="card-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80"
+            alt="Amboseli elephants">
+
+        </div>
+
+        <div class="card-body">
+
+          <span class="duration">
+            4 Days
+          </span>
+
+          <h3>
+            Amboseli Safari
+          </h3>
+
+          <p>
+            See magnificent elephants against the dramatic backdrop of Mount Kilimanjaro.
+          </p>
+
+          <div class="price">
+            From
+            <strong>USD 4,000</strong>
+            per person
+          </div>
+
+          <a
+            class="card-link"
+            href="#contact"
+            onclick="setPackage('4 Days Amboseli Safari')">
+            Request This Safari →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- Tsavo -->
+
+      <article class="card">
+
+        <div class="card-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80"
+            alt="Tsavo safari">
+
+        </div>
+
+        <div class="card-body">
+
+          <span class="duration">
+            3 Days
+          </span>
+
+          <h3>
+            Tsavo Safari
+          </h3>
+
+          <p>
+            Explore the wild landscapes and diverse wildlife of Kenya's famous Tsavo ecosystem.
+          </p>
+
+          <div class="price">
+            From
+            <strong>USD 4,000</strong>
+            per person
+          </div>
+
+          <a
+            class="card-link"
+            href="#contact"
+            onclick="setPackage('3 Days Tsavo Safari')">
+            Request This Safari →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- Kenya Coast -->
+
+      <article class="card">
+
+        <div class="card-img">
+
+          <img
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+            alt="Kenya coast">
+
+        </div>
+
+        <div class="card-body">
+
+          <span class="duration">
+            6 Days
+          </span>
+
+          <h3>
+            Kenya Coast Holiday
+          </h3>
+
+          <p>
+            Relax, discover coastal culture and enjoy the tropical beauty of Kenya's coastline.
+          </p>
+
+          <div class="price">
+            From
+            <strong>USD 4,000</strong>
+            per person
+          </div>
+
+          <a
+            class="card-link"
+            href="#contact"
+            onclick="setPackage('6 Days Kenya Coast Holiday')">
+            Request This Tour →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= WHY TRAVEL WITH US ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Why Travel With Us
+      </span>
+
+      <h2>
+        Safari made simple
+      </h2>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <div class="why">
+
+        <div class="icon">
+          🦁
+        </div>
+
+        <h3>
+          Wildlife Experiences
+        </h3>
+
         <p>
-          Discover Kenya's spectacular wildlife, landscapes and coastal treasures
-          with Samy Tours & Safaris. Explore, experience and create memories for life.
+          Discover Kenya's remarkable wildlife in some of Africa's most iconic destinations.
         </p>
-        <div class="actions">
-          <a href="#safaris" class="btn btn-primary">Explore Our Safaris</a>
-          <a href="#contact" class="btn btn-outline">Plan My Trip</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85" alt="Kenya safari">
       </div>
-      <div class="about-copy">
-        <span class="eyebrow">Welcome to Samy Tours & Safaris</span>
-        <h2>Your Kenyan adventure starts here.</h2>
+
+
+      <div class="why">
+
+        <div class="icon">
+          🚙
+        </div>
+
+        <h3>
+          Comfortable Safaris
+        </h3>
+
         <p>
-          Based in Mombasa, Kenya, Samy Tours & Safaris is dedicated to creating memorable journeys across Kenya,
-          from world-famous wildlife reserves to the beautiful Kenyan coast.
+          Enjoy carefully planned journeys designed around your comfort and interests.
         </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="icon">
+          🧭
+        </div>
+
+        <h3>
+          Local Expertise
+        </h3>
+
         <p>
-          Whether you are looking for a classic wildlife safari, a family holiday,
-          a romantic getaway or a coastal escape, we help you discover Kenya at its best.
+          Travel with a team focused on making your Kenyan experience smooth and memorable.
         </p>
-        <div class="ticks">
-          <div class="tick">Personalized itineraries</div>
-          <div class="tick">Professional safari service</div>
-          <div class="tick">Amazing wildlife experiences</div>
-          <div class="tick">Memories for life</div>
-        </div>
-        <a href="#contact" class="btn btn-primary">Start Planning</a>
+
       </div>
+
+
+      <div class="why">
+
+        <div class="icon">
+          ⭐
+        </div>
+
+        <h3>
+          Personal Service
+        </h3>
+
+        <p>
+          We listen to what you want and help create an itinerary that fits your trip.
+        </p>
+
+      </div>
+
     </div>
-  </section>
 
+  </div>
 
-  <section class="experience-section" id="experiences">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Tours & Experiences</span>
-        <h2>Discover Kenya Your Way</h2>
-        <p>Swipe through our tours, holidays, travel services and safari experiences. Choose an experience and enquire directly with Samy Tours & Safaris.</p>
-      </div>
+</section>
 
-      <div class="experience-wrap">
-        <div class="experience-arrows">
-          <button class="experience-arrow" type="button" onclick="moveExperiences(-1)" aria-label="Previous experience">←</button>
-          <button class="experience-arrow" type="button" onclick="moveExperiences(1)" aria-label="Next experience">→</button>
-        </div>
+<!-- ================= DESTINATIONS ================= -->
 
-        <div class="experience-carousel" id="experienceCarousel">
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="Tsavo East Day Trip" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Tsavo East Day Trip</h3>
-            <p>Explore Tsavo East's red-soil landscapes and wildlife.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo East Day Trip')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85" alt="Tsavo West Day Trip" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Tsavo West Day Trip</h3>
-            <p>Discover volcanic scenery, wildlife and the famous Mzima Springs.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo West Day Trip')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85" alt="Tsavo East & West Day Trip" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Tsavo East & West Day Trip</h3>
-            <p>Experience both sides of the legendary Tsavo ecosystem.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Tsavo East & West Day Trip')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="Taita Hills Day Trip" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Taita Hills Day Trip</h3>
-            <p>Enjoy wildlife and spectacular views around the Taita Hills.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Taita Hills Day Trip')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85" alt="Wasini Island Day Trip" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Wasini Island Day Trip</h3>
-            <p>Discover the beautiful waters and coastal charm of Wasini Island.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Wasini Island Day Trip')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85" alt="Dolphin Watching Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Half Day</span>
-            <h3>Dolphin Watching Tour</h3>
-            <p>Enjoy a memorable marine experience searching for dolphins.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Dolphin Watching Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Kisite-Mpunguti Marine Park Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Kisite-Mpunguti Marine Park Tour</h3>
-            <p>Snorkel, swim and explore the rich marine life of the coast.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Kisite-Mpunguti Marine Park Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85" alt="Mombasa City Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Mombasa City Tour</h3>
-            <p>Discover Mombasa's culture, history, markets and coastal character.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa City Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=85" alt="Mombasa Old Town Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Half Day</span>
-            <h3>Mombasa Old Town Tour</h3>
-            <p>Walk through historic streets filled with Swahili-Arab architecture.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Old Town Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85" alt="Fort Jesus Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Half Day</span>
-            <h3>Fort Jesus Tour</h3>
-            <p>Explore one of Mombasa's most iconic historical landmarks.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Fort Jesus Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85" alt="Haller Park Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Half Day</span>
-            <h3>Haller Park Tour</h3>
-            <p>Enjoy nature, wildlife and a relaxing visit to Haller Park.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Haller Park Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85" alt="Mombasa City & Haller Park Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Mombasa City & Haller Park Tour</h3>
-            <p>Combine Mombasa's highlights with a visit to Haller Park.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa City & Haller Park Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=85" alt="Mombasa Dhow Sunset Cruise" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Evening</span>
-            <h3>Mombasa Dhow Sunset Cruise</h3>
-            <p>Sail along the coast and watch the sun set over the Indian Ocean.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Dhow Sunset Cruise')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85" alt="Mombasa Marine Park Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Mombasa Marine Park Tour</h3>
-            <p>Explore coral reefs and marine life in Mombasa's coastal waters.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Marine Park Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85" alt="Diani Beach Experience" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Diani Beach Experience</h3>
-            <p>Relax and enjoy the white sands and turquoise waters of Diani.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach Experience')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85" alt="Diani Beach & Wasini Island Tour" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">1 Day</span>
-            <h3>Diani Beach & Wasini Island Tour</h3>
-            <p>Combine a Diani beach escape with a beautiful Wasini Island adventure.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach & Wasini Island Tour')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Mombasa Beach Holiday" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Holiday</span>
-            <h3>Mombasa Beach Holiday</h3>
-            <p>Enjoy a relaxing coastal holiday with beaches, culture and activities.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Mombasa Beach Holiday')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Diani Beach Holiday" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Holiday</span>
-            <h3>Diani Beach Holiday</h3>
-            <p>Experience a tropical beach getaway in beautiful Diani.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Diani Beach Holiday')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85" alt="Watamu Beach Holiday" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Holiday</span>
-            <h3>Watamu Beach Holiday</h3>
-            <p>Relax on Watamu's beaches and discover its marine attractions.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Watamu Beach Holiday')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=85" alt="Malindi Beach Holiday" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Holiday</span>
-            <h3>Malindi Beach Holiday</h3>
-            <p>Enjoy Malindi's beaches, culture and coastal atmosphere.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Malindi Beach Holiday')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=900&q=85" alt="Lamu Island Holiday" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Holiday</span>
-            <h3>Lamu Island Holiday</h3>
-            <p>Experience Lamu's unique Swahili culture, beaches and island life.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Lamu Island Holiday')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="2 Days 1 Night Tsavo East Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">2 Days / 1 Night</span>
-            <h3>2 Days 1 Night Tsavo East Safari</h3>
-            <p>A short wildlife escape through the dramatic Tsavo East landscape.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('2 Days 1 Night Tsavo East Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=85" alt="2 Days 1 Night Tsavo West Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">2 Days / 1 Night</span>
-            <h3>2 Days 1 Night Tsavo West Safari</h3>
-            <p>Explore Tsavo West with game drives and scenic wilderness.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('2 Days 1 Night Tsavo West Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo East Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">3 Days / 2 Nights</span>
-            <h3>3 Days 2 Nights Tsavo East Safari</h3>
-            <p>Take more time to explore Tsavo East and its abundant wildlife.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo East Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo West Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">3 Days / 2 Nights</span>
-            <h3>3 Days 2 Nights Tsavo West Safari</h3>
-            <p>Discover Tsavo West's diverse landscapes and wildlife.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo West Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Tsavo East & West Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">3 Days / 2 Nights</span>
-            <h3>3 Days 2 Nights Tsavo East & West Safari</h3>
-            <p>Experience both Tsavo East and Tsavo West in one safari.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Tsavo East & West Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=85" alt="3 Days 2 Nights Amboseli Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">3 Days / 2 Nights</span>
-            <h3>3 Days 2 Nights Amboseli Safari</h3>
-            <p>See elephants and spectacular Mount Kilimanjaro views in Amboseli.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('3 Days 2 Nights Amboseli Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="4 Days 3 Nights Tsavo & Amboseli Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">4 Days / 3 Nights</span>
-            <h3>4 Days 3 Nights Tsavo & Amboseli Safari</h3>
-            <p>Combine two iconic parks for a memorable Kenya wildlife adventure.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('4 Days 3 Nights Tsavo & Amboseli Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85" alt="5 Days Kenya Wildlife Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">5 Days</span>
-            <h3>5 Days Kenya Wildlife Safari</h3>
-            <p>A multi-day wildlife journey through some of Kenya's finest safari destinations.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('5 Days Kenya Wildlife Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=900&q=85" alt="7 Days Kenya Safari" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">7 Days</span>
-            <h3>7 Days Kenya Safari</h3>
-            <p>A longer Kenya safari designed for deeper wildlife and landscape experiences.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('7 Days Kenya Safari')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85" alt="Honeymoon Packages" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>Honeymoon Packages</h3>
-            <p>Romantic Kenya escapes designed for unforgettable moments together.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Honeymoon Packages')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=900&q=85" alt="Family Safari Packages" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>Family Safari Packages</h3>
-            <p>Family-friendly safaris planned around comfort, fun and memorable experiences.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Family Safari Packages')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85" alt="Group Safari Packages" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>Group Safari Packages</h3>
-            <p>Flexible safari experiences for friends, clubs, organizations and groups.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Group Safari Packages')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=900&q=85" alt="Corporate Tours" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>Corporate Tours</h3>
-            <p>Professional travel experiences for corporate teams, retreats and events.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Corporate Tours')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=85" alt="School Trips & Educational Tours" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>School Trips & Educational Tours</h3>
-            <p>Educational travel experiences combining learning, nature and Kenyan attractions.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('School Trips & Educational Tours')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85" alt="Airport Transfers" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Transfer</span>
-            <h3>Airport Transfers</h3>
-            <p>Reliable transfers between airports, hotels and your chosen destination.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Airport Transfers')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85" alt="SGR & Flight Booking" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Travel Service</span>
-            <h3>SGR & Flight Booking</h3>
-            <p>Get assistance arranging SGR and domestic or regional flight travel.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('SGR & Flight Booking')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Hotel Booking" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Travel Service</span>
-            <h3>Hotel Booking</h3>
-            <p>Find and arrange accommodation to suit your itinerary and budget.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Hotel Booking')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85" alt="Car Hire" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Transport</span>
-            <h3>Car Hire</h3>
-            <p>Choose convenient vehicle hire for your Kenya travel needs.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Car Hire')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85" alt="Safari Vehicle Hire" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Transport</span>
-            <h3>Safari Vehicle Hire</h3>
-            <p>Hire a suitable safari vehicle for independent or guided wildlife travel.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Safari Vehicle Hire')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?auto=format&fit=crop&w=900&q=85" alt="Custom-Made Safaris" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Custom</span>
-            <h3>Custom-Made Safaris</h3>
-            <p>Build a personalized Kenya itinerary around your dates, interests and budget.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Custom-Made Safaris')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=900&q=85" alt="Airport Meet & Greet" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Transfer</span>
-            <h3>Airport Meet & Greet</h3>
-            <p>Enjoy a smooth arrival with professional airport meet-and-greet assistance.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Airport Meet & Greet')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        <article class="experience-card">
-          <div class="experience-photo"><img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=900&q=85" alt="Travel Consultation" loading="lazy"></div>
-          <div class="experience-body">
-            <span class="experience-duration">Consultation</span>
-            <h3>Travel Consultation</h3>
-            <p>Get expert guidance to help plan your ideal Kenya travel experience.</p>
-            <div class="experience-actions">
-              <a class="btn btn-primary" href="#contact" onclick="setPackage('Travel Consultation')">Book / Enquire</a>
-            </div>
-          </div>
-        </article>
-        </div>
-        <div class="swipe-hint">← Swipe left or right to explore all tours & experiences →</div>
-      </div>
+<section class="packages" id="destinations">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Discover Kenya
+      </span>
+
+      <h2>
+        Featured destinations
+      </h2>
+
+      <p>
+        From open savannahs to tropical beaches, Kenya has an experience for every traveler.
+      </p>
+
     </div>
-  </section>
 
-  <section class="packages" id="safaris">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Our Safari Packages</span>
-        <h2>Journeys worth remembering</h2>
-        <p>Choose one of our featured Kenya experiences. All packages start from <strong>USD 4,000 per person</strong>; final pricing depends on dates, accommodation, group size and inclusions.</p>
+
+    <div class="dest-grid">
+
+      <div class="dest">
+
+        <img
+          src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1000&q=80"
+          alt="Maasai Mara">
+
+        <div class="dest-info">
+
+          <h3>
+            Maasai Mara
+          </h3>
+
+          <p>
+            Wildlife & Big Five
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=900&q=80" alt="Maasai Mara safari">
-          </div>
-          <div class="card-body">
-            <span class="duration">4 Days</span>
-            <h3>Maasai Mara Safari</h3>
-            <p>Experience Kenya's iconic savannah, abundant wildlife and unforgettable game drives.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
-            <a class="card-link" href="#contact" onclick="setPackage('4 Days Maasai Mara Safari')">Request This Safari →</a>
-          </div>
-        </article>
 
-        <article class="card">
-          <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=900&q=80" alt="Amboseli elephants">
-          </div>
-          <div class="card-body">
-            <span class="duration">4 Days</span>
-            <h3>Amboseli Safari</h3>
-            <p>See magnificent elephants against the dramatic backdrop of Mount Kilimanjaro.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
-            <a class="card-link" href="#contact" onclick="setPackage('4 Days Amboseli Safari')">Request This Safari →</a>
-          </div>
-        </article>
+      <div class="dest">
 
-        <article class="card">
-          <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=900&q=80" alt="Tsavo safari">
-          </div>
-          <div class="card-body">
-            <span class="duration">3 Days</span>
-            <h3>Tsavo Safari</h3>
-            <p>Explore the wild landscapes and diverse wildlife of Kenya's famous Tsavo ecosystem.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
-            <a class="card-link" href="#contact" onclick="setPackage('3 Days Tsavo Safari')">Request This Safari →</a>
-          </div>
-        </article>
+        <img
+          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80"
+          alt="Amboseli">
 
-        <article class="card">
-          <div class="card-img">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Kenya coast">
-          </div>
-          <div class="card-body">
-            <span class="duration">6 Days</span>
-            <h3>Kenya Coast Holiday</h3>
-            <p>Relax, discover coastal culture and enjoy the tropical beauty of Kenya's coastline.</p><div class="price">From <strong>USD 4,000</strong> per person</div>
-            <a class="card-link" href="#contact" onclick="setPackage('6 Days Kenya Coast Holiday')">Request This Tour →</a>
-          </div>
-        </article>
+        <div class="dest-info">
+
+          <h3>
+            Amboseli
+          </h3>
+
+          <p>
+            Elephants & Kilimanjaro
+          </p>
+
+        </div>
+
       </div>
+
+
+      <div class="dest">
+
+        <img
+          src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1000&q=80"
+          alt="Tsavo">
+
+        <div class="dest-info">
+
+          <h3>
+            Tsavo
+          </h3>
+
+          <p>
+            Wild & Vast Landscapes
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Why Travel With Us</span>
-        <h2>Safari made simple</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why">
-          <div class="icon">🦁</div>
-          <h3>Wildlife Experiences</h3>
-          <p>Discover Kenya's remarkable wildlife in some of Africa's most iconic destinations.</p>
-        </div>
-        <div class="why">
-          <div class="icon">🚙</div>
-          <h3>Comfortable Safaris</h3>
-          <p>Enjoy carefully planned journeys designed around your comfort and interests.</p>
-        </div>
-        <div class="why">
-          <div class="icon">🧭</div>
-          <h3>Local Expertise</h3>
-          <p>Travel with a team focused on making your Kenyan experience smooth and memorable.</p>
-        </div>
-        <div class="why">
-          <div class="icon">⭐</div>
-          <h3>Personal Service</h3>
-          <p>We listen to what you want and help create an itinerary that fits your trip.</p>
-        </div>
-      </div>
+  </div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+  <div class="container cta-box">
+
+    <div>
+
+      <span class="eyebrow">
+        Ready for Kenya?
+      </span>
+
+      <h2>
+        Let's create your safari.
+      </h2>
+
+      <p>
+        Tell us where you want to go, how many days you have
+        and what you would love to experience.
+      </p>
+
     </div>
-  </section>
 
-  <section class="packages" id="destinations">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Discover Kenya</span>
-        <h2>Featured destinations</h2>
-        <p>From open savannahs to tropical beaches, Kenya has an experience for every traveler.</p>
-      </div>
+    <a href="#contact" class="btn btn-primary">
+      Request a Quote
+    </a>
 
-      <div class="dest-grid">
-        <div class="dest">
-          <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=1000&q=80" alt="Maasai Mara">
-          <div class="dest-info"><h3>Maasai Mara</h3><p>Wildlife & Big Five</p></div>
-        </div>
-        <div class="dest">
-          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=80" alt="Amboseli">
-          <div class="dest-info"><h3>Amboseli</h3><p>Elephants & Kilimanjaro</p></div>
-        </div>
-        <div class="dest">
-          <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?auto=format&fit=crop&w=1000&q=80" alt="Tsavo">
-          <div class="dest-info"><h3>Tsavo</h3><p>Wild & Vast Landscapes</p></div>
-        </div>
-      </div>
+  </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        Contact Us
+      </span>
+
+      <h2>
+        Plan your adventure
+      </h2>
+
+      <p>
+        Send your travel details and Samy Tours & Safaris will be ready to help.
+      </p>
+
     </div>
-  </section>
 
-  <section class="cta">
-    <div class="container cta-box">
-      <div>
-        <span class="eyebrow">Ready for Kenya?</span>
-        <h2>Let's create your safari.</h2>
-        <p>Tell us where you want to go, how many days you have and what you would love to experience.</p>
+
+    <div class="contact-grid">
+
+
+      <!-- CONTACT INFORMATION -->
+
+      <div class="contact-card">
+
+        <h3>
+          Samy Tours & Safaris
+        </h3>
+
+
+        <div class="contact-item">
+
+          <div>
+            📞
+          </div>
+
+          <div>
+
+            <strong>
+              Call / WhatsApp
+            </strong>
+
+            <span>
+              0707411732<br>
+              0707435097
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div>
+            ✉️
+          </div>
+
+          <div>
+
+            <strong>
+              Email
+            </strong>
+
+            <span>
+              samytoursnsafaris@gmail.com
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div>
+            📍
+          </div>
+
+          <div>
+
+            <strong>
+              Location
+            </strong>
+
+            <span>
+              Mombasa, Kenya
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <a
+          class="btn btn-primary"
+          href="https://www.google.com/maps/search/?api=1&query=Mombasa%2C%20Kenya"
+          target="_blank"
+          rel="noopener">
+
+          View Mombasa on Map
+
+        </a>
+
       </div>
-      <a href="#contact" class="btn btn-primary">Request a Quote</a>
-    </div>
-  </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Contact Us</span>
-        <h2>Plan your adventure</h2>
-        <p>Send your travel details and Samy Tours & Safaris will be ready to help.</p>
-      </div>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Samy Tours & Safaris</h3>
+      <!-- QUOTE FORM -->
 
-          <div class="contact-item">
-            <div>📞</div>
-            <div>
-              <strong>Call / WhatsApp</strong>
-              <span>0707411732<br>0707435097</span>
+      <div class="form-card">
+
+        <h3>
+          Request a Quote
+        </h3>
+
+
+        <form id="quoteForm">
+
+          <div class="form-grid">
+
+
+            <div class="field">
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                id="name"
+                required
+                placeholder="Your name">
+
             </div>
+
+
+            <div class="field">
+
+              <label for="email">
+                Email
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder="you@example.com">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="phone">
+                Phone / WhatsApp
+              </label>
+
+              <input
+                id="phone"
+                placeholder="+254...">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="package">
+                Safari Package
+              </label>
+
+              <select id="package">
+
+                <option>
+                  Choose a package
+                </option>
+
+                <option>
+                  Tsavo East Day Trip
+                </option>
+
+                <option>
+                  Tsavo West Day Trip
+                </option>
+
+                <option>
+                  Wasini Dolphine Tour
+                </option>
+
+                <option>
+                  Mombasa City Tour
+                </option>
+
+                <option>
+                  Mombasa Dhow Sunset Cruise
+                </option>
+
+                <option>
+                  Mombasa Marine Park Tour
+                </option>
+
+                <option>
+                  2 Days 1 Night Tsavo East Safari
+                </option>
+
+                <option>
+                  2 Days 1 Night Tsavo West Safari
+                </option>
+
+                <option>
+                  3 Days 2 Nights Tsavo East Safari
+                </option>
+
+                <option>
+                  3 Days 2 Nights Tsavo West Safari
+                </option>
+
+                <option>
+                  3 Days 2 Nights Tsavo East & West Safari
+                </option>
+
+                <option>
+                  3 Days 2 Nights Amboseli Safari
+                </option>
+
+                <option>
+                  5 Days Kenya Wildlife Safari
+                </option>
+
+                <option>
+                  7 Days Kenya Safari
+                </option>
+
+                <option>
+                  Honeymoon Packages
+                </option>
+
+                <option>
+                  Family Safari Packages
+                </option>
+
+                <option>
+                  School Trips & Educational Tours
+                </option>
+
+                <option>
+                  Airport Transfers
+                </option>
+
+                <option>
+                  SGR & Flight Booking
+                </option>
+
+                <option>
+                  Hotel Booking
+                </option>
+
+                <option>
+                  Custom-Made Safaris
+                </option>
+
+                <option>
+                  Travel Consultation
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="date">
+                Preferred Travel Date
+              </label>
+
+              <input
+                id="date"
+                type="date">
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="guests">
+                Number of Travelers
+              </label>
+
+              <input
+                id="guests"
+                type="number"
+                min="1"
+                placeholder="e.g. 2">
+
+            </div>
+
+
+            <div class="field full">
+
+              <label for="message">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                placeholder="Tell us about your trip..."></textarea>
+
+            </div>
+
+
+            <div class="field full">
+
+              <button
+                class="btn btn-primary submit"
+                type="submit">
+
+                Send Request on WhatsApp
+
+              </button>
+
+            </div>
+
           </div>
 
-          <div class="contact-item">
-            <div>✉️</div>
-            <div>
-              <strong>Email</strong>
-              <span>samytoursnsafaris@gmail.com</span>
-            </div>
-          </div>
+        </form>
 
-          <div class="contact-item">
-            <div>📍</div>
-            <div>
-              <strong>Location</strong>
-              <span>Mombasa, Kenya</span>
-            </div>
-          </div>
-
-          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Mombasa%2C%20Kenya" target="_blank" rel="noopener">View Mombasa on Map</a>
-        </div>
-
-        <div class="form-card">
-          <h3>Request a Quote</h3>
-          <form id="quoteForm">
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">Full Name</label>
-                <input id="name" required placeholder="Your name">
-              </div>
-              <div class="field">
-                <label for="email">Email</label>
-                <input id="email" type="email" required placeholder="you@example.com">
-              </div>
-              <div class="field">
-                <label for="phone">Phone / WhatsApp</label>
-                <input id="phone" placeholder="+254...">
-              </div>
-              <div class="field">
-                <label for="package">Safari Package</label>
-                <select id="package">
-                  
-                   <option>Choose a package</option>
-                   <option>Tsavo East Day Trip</option>
-                   <option>Tsavo West Day Trip</option>
-                   <option>Tsavo East & West Day Trip</option>
-                   <option>Taita Hills Day Trip</option>
-                   <option>Wasini Island Day Trip</option>
-                   <option>Dolphin Watching Tour</option>
-                   <option>Kisite-Mpunguti Marine Park Tour</option>
-                   <option>Mombasa City Tour</option>
-                   <option>Mombasa Old Town Tour</option>
-                   <option>Fort Jesus Tour</option>
-                   <option>Haller Park Tour</option>
-                   <option>Mombasa City & Haller Park Tour</option>
-                   <option>Mombasa Dhow Sunset Cruise</option>
-                   <option>Mombasa Marine Park Tour</option>
-                   <option>Diani Beach Experience</option>
-                   <option>Diani Beach & Wasini Island Tour</option>
-                   <option>Mombasa Beach Holiday</option>
-                   <option>Diani Beach Holiday</option>
-                   <option>Watamu Beach Holiday</option>
-                   <option>Malindi Beach Holiday</option>
-                   <option>Lamu Island Holiday</option>
-                   <option>2 Days 1 Night Tsavo East Safari</option>
-                   <option>2 Days 1 Night Tsavo West Safari</option>
-                   <option>3 Days 2 Nights Tsavo East Safari</option>
-                   <option>3 Days 2 Nights Tsavo West Safari</option>
-                   <option>3 Days 2 Nights Tsavo East & West Safari</option>
-                   <option>3 Days 2 Nights Amboseli Safari</option>
-                   <option>4 Days 3 Nights Tsavo & Amboseli Safari</option>
-                   <option>5 Days Kenya Wildlife Safari</option>
-                   <option>7 Days Kenya Safari</option>
-                   <option>Honeymoon Packages</option>
-                   <option>Family Safari Packages</option>
-                   <option>Group Safari Packages</option>
-                   <option>Corporate Tours</option>
-                   <option>School Trips & Educational Tours</option>
-                   <option>Airport Transfers</option>
-                   <option>SGR & Flight Booking</option>
-                   <option>Hotel Booking</option>
-                   <option>Car Hire</option>
-                   <option>Safari Vehicle Hire</option>
-                   <option>Custom-Made Safaris</option>
-                   <option>Airport Meet & Greet</option>
-                   <option>Travel Consultation</option>
-                 </select>
-              </div>
-              <div class="field">
-                <label for="date">Preferred Travel Date</label>
-                <input id="date" type="date">
-              </div>
-              <div class="field">
-                <label for="guests">Number of Travelers</label>
-                <input id="guests" type="number" min="1" placeholder="e.g. 2">
-              </div>
-              <div class="field full">
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Tell us about your trip..."></textarea>
-              </div>
-              <div class="field full">
-                <button class="btn btn-primary submit" type="submit">Send Request on WhatsApp</button>
-              </div>
-            </div>
-          </form>
-        </div>
       </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
+
 </main>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
+
   <div class="container footer-grid">
+
+
     <div>
-      <h3>Samy Tours & Safaris</h3>
-      <p>Explore. Experience. Memories for Life.</p>
-      <p style="margin-top:10px">Discover the beauty and wildlife of Kenya with a safari designed around you.</p>
+
+      <h3>
+        Samy Tours & Safaris
+      </h3>
+
+      <p>
+        Explore. Experience. Memories for Life.
+      </p>
+
+      <p style="margin-top:10px">
+        Discover the beauty and wildlife of Kenya
+        with a safari designed around you.
+      </p>
+
     </div>
+
+
     <div>
-      <h3>Quick Links</h3>
+
+      <h3>
+        Quick Links
+      </h3>
+
       <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#safaris">Safaris</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#about">
+          About Us
+        </a>
+
+        <a href="#safaris">
+          Safaris
+        </a>
+
+        <a href="#destinations">
+          Destinations
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </div>
+
     </div>
+
+
     <div>
-      <h3>Contact</h3>
-      <p style="margin-bottom:8px">📍 Mombasa, Kenya</p>
+
+      <h3>
+        Contact
+      </h3>
+
+      <p style="margin-bottom:8px">
+        📍 Mombasa, Kenya
+      </p>
+
       <div class="footer-links">
-        <a href="tel:+254707411732">0707 411 732</a>
-        <a href="tel:+254707435097">0707 435 097</a>
-        <a href="mailto:samytoursnsafaris@gmail.com">samytoursnsafaris@gmail.com</a>
+
+        <a href="tel:+254707411732">
+          0707 411 732
+        </a>
+
+        <a href="tel:+254707435097">
+          0707 435 097
+        </a>
+
+        <a href="mailto:samytoursnsafaris@gmail.com">
+          samytoursnsafaris@gmail.com
+        </a>
+
       </div>
+
     </div>
+
   </div>
+
+
   <div class="container copyright">
-    © <span id="year"></span> Samy Tours & Safaris. All rights reserved.
+
+    ©
+    <span id="year"></span>
+    Samy Tours & Safaris. All rights reserved.
+
   </div>
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/254707411732?text=Hello%20Samy%20Tours%20%26%20Safaris%2C%20I%20would%20like%20to%20plan%20a%20Kenya%20safari." target="_blank" aria-label="Chat on WhatsApp">◉</a>
+
+<!-- ================= WHATSAPP BUTTON ================= -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/254707411732?text=Hello%20Samy%20Tours%20%26%20Safaris%2C%20I%20would%20like%20to%20plan%20a%20Kenya%20safari."
+  target="_blank"
+  aria-label="Chat on WhatsApp">
+
+  ◉
+
+</a>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
+
+  /* Mobile menu */
+
   function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("show");
+
+    document
+      .getElementById("navLinks")
+      .classList
+      .toggle("show");
+
   }
+
+
+  /* Set selected package */
 
   function setPackage(value){
-    document.getElementById("package").value = value;
+
+    document
+      .getElementById("package")
+      .value = value;
+
   }
 
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("navLinks").classList.remove("show");
-    });
-  });
 
+  /* Close mobile menu */
+
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document
+          .getElementById("navLinks")
+          .classList
+          .remove("show");
+
+      });
+
+    });
+
+
+  /* Experience carousel */
 
   function moveExperiences(direction){
-    const carousel = document.getElementById("experienceCarousel");
-    const card = carousel.querySelector(".experience-card");
+
+    const carousel =
+      document.getElementById("experienceCarousel");
+
+    const card =
+      carousel.querySelector(".experience-card");
+
     if(!card) return;
-    const amount = card.getBoundingClientRect().width + 20;
-    carousel.scrollBy({left: direction * amount, behavior:"smooth"});
+
+    const amount =
+      card.getBoundingClientRect().width + 20;
+
+    carousel.scrollBy({
+
+      left:direction * amount,
+
+      behavior:"smooth"
+
+    });
+
   }
 
-  document.getElementById("quoteForm").addEventListener("submit", function(e){
-    e.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
-    const pkg = document.getElementById("package").value;
-    const date = document.getElementById("date").value;
-    const guests = document.getElementById("guests").value;
-    const message = document.getElementById("message").value;
+  /* WhatsApp quote form */
 
-    const text =
-      `Hello Samy Tours & Safaris,%0A%0A` +
-      `I would like to request a safari quote.%0A%0A` +
-      `Name: ${encodeURIComponent(name)}%0A` +
-      `Email: ${encodeURIComponent(email)}%0A` +
-      `Phone: ${encodeURIComponent(phone)}%0A` +
-      `Package: ${encodeURIComponent(pkg)}%0A` +
-      `Travel Date: ${encodeURIComponent(date)}%0A` +
-      `Travelers: ${encodeURIComponent(guests)}%0A` +
-      `Message: ${encodeURIComponent(message)}`;
+  document
+    .getElementById("quoteForm")
+    .addEventListener("submit", function(e){
 
-    window.open(`https://wa.me/254707411732?text=${text}`, "_blank");
-  });
+      e.preventDefault();
 
-  document.getElementById("year").textContent = new Date().getFullYear();
+      const name =
+        document.getElementById("name").value;
+
+      const email =
+        document.getElementById("email").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const pkg =
+        document.getElementById("package").value;
+
+      const date =
+        document.getElementById("date").value;
+
+      const guests =
+        document.getElementById("guests").value;
+
+      const message =
+        document.getElementById("message").value;
+
+
+      const text =
+
+        `Hello Samy Tours & Safaris,%0A%0A` +
+
+        `I would like to request a safari quote.%0A%0A` +
+
+        `Name: ${encodeURIComponent(name)}%0A` +
+
+        `Email: ${encodeURIComponent(email)}%0A` +
+
+        `Phone: ${encodeURIComponent(phone)}%0A` +
+
+        `Package: ${encodeURIComponent(pkg)}%0A` +
+
+        `Travel Date: ${encodeURIComponent(date)}%0A` +
+
+        `Travelers: ${encodeURIComponent(guests)}%0A` +
+
+        `Message: ${encodeURIComponent(message)}`;
+
+
+      window.open(
+        `https://wa.me/254707411732?text=${text}`,
+        "_blank"
+      );
+
+    });
+
+
+  /* Current year */
+
+  document
+    .getElementById("year")
+    .textContent = new Date().getFullYear();
+
 </script>
 
 </body>
